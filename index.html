@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- SEO -->
+<title>Trust the Process | Yoga & Wellness</title>
+<meta name="description" content="Trust the Process — a premium wellness studio offering Yoga, Hot Yoga, Hot Pilates and Yin Yoga. Move with intention, quiet the mind, trust the process." />
+<meta name="keywords" content="yoga, hot yoga, hot pilates, yin yoga, wellness studio, mindfulness, South Africa" />
+<meta name="author" content="Trust the Process" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Trust the Process | Yoga & Wellness" />
+<meta property="og:description" content="Move with intention. Trust the process. Yoga, Hot Yoga, Hot Pilates and Yin Yoga." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1200" />
+
+<!-- Favicon (inline SVG leaf) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%2365734A'/%3E%3Cpath d='M16 6c-4 0-7 3-7 7 0 4 3 7 7 7s7-3 7-7-3-7-7-7z' fill='%23F0E8D9'/%3E%3Cpath d='M16 10v12M12 16h8' stroke='%2365734A' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E" />
+
+<!-- Google Fonts: Montserrat -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- React + ReactDOM + Babel (for inline JSX) -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<!-- React Router (using BrowserRouter – no hash) -->
+<script crossorigin src="https://unpkg.com/react-router-dom@6.22.0/dist/umd/react-router-dom.production.min.js"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Montserrat', 'sans-serif'] },
+        colors: {
+          'base':     '#F0E8D9',
+          'cream':    '#E8DDCB',
+          'brown':    '#8A6A4A',
+          'deep':     '#4E3B2A',
+          'leaf':     '#65734A',
+          'gold':     '#C5A24A',
+          'terra':    '#A6533F',
+          'offwhite': '#FAF7F0',
+        },
+        boxShadow: {
+          'soft':   '0 10px 30px -12px rgba(78,59,42,0.12)',
+          'medium': '0 20px 45px -15px rgba(78,59,42,0.18)',
+          'large':  '0 30px 70px -20px rgba(78,59,42,0.25)',
+        },
+        borderRadius: { 'organic': '32px 8px 32px 8px' },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Montserrat', sans-serif; background: #F0E8D9; color: #4E3B2A; overflow-x: hidden; }
+
+  /* Scroll progress */
+  .scroll-progress {
+    position: fixed; top: 0; left: 0; height: 3px;
+    background: linear-gradient(90deg, #65734A, #C5A24A);
+    z-index: 9999; transition: width 0.1s ease;
+  }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity .8s ease, transform .8s cubic-bezier(.22,.61,.36,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* Organic animated background blobs */
+  @keyframes floatBlob {
+    0%,100% { transform: translate(0,0) scale(1); }
+    50%     { transform: translate(20px,-30px) scale(1.08); }
+  }
+  .blob { animation: floatBlob 14s ease-in-out infinite; }
+
+  @keyframes floatLeaf {
+    0%,100% { transform: translate(0,0) rotate(0); opacity: .12; }
+    50%     { transform: translate(15px,-25px) rotate(15deg); opacity: .28; }
+  }
+  .leaf-float { animation: floatLeaf 12s ease-in-out infinite; }
+
+  /* Focus states */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 2px solid #65734A;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Page transition */
+  .page-enter { animation: pageIn .5s ease forwards; }
+  @keyframes pageIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Modal */
+  .modal-backdrop {
+    position: fixed; inset: 0; background: rgba(78,59,42,.55);
+    backdrop-filter: blur(6px); z-index: 2000;
+    display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+    animation: fadeIn .3s ease;
+  }
+  @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+  .modal-panel { animation: modalIn .4s cubic-bezier(.22,.61,.36,1); }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(20px) scale(.96); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: .001ms !important;
+      transition-duration: .001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
+</head>
+
+<body>
+<div id="root"></div>
+
+<script type="text/babel" data-type="module">
+const { useState, useEffect, useRef } = React;
+/* BrowserRouter – clean URLs, no "#" */
+const { BrowserRouter, Routes, Route, Link, NavLink, useLocation } = ReactRouterDOM;
+
+/* ============================================================
+   SHARED UTILITIES
+   ============================================================ */
+
+function ScrollProgress() {
+  const [w, setW] = useState(0);
+  useEffect(() => {
+    const onScroll = () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      setW(h > 0 ? (window.scrollY / h) * 100 : 0);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  return <div className="scroll-progress" style={{ width: `${w}%` }} />;
+}
+
+function useReveal() {
+  useEffect(() => {
+    const els = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+    );
+    els.forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  });
+}
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }); }, [pathname]);
+  return null;
+}
+
+/* ============================================================
+   BUTTON
+   ============================================================ */
+const Button = ({ children, variant = 'primary', as = 'button', href, onClick, type = 'button', className = '' }) => {
+  const base = 'inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-semibold text-base tracking-wide transition-all duration-300 cursor-pointer border-none font-sans';
+  const styles = {
+    primary:  'bg-leaf text-offwhite shadow-soft hover:bg-deep hover:-translate-y-1 hover:shadow-medium',
+    secondary:'bg-transparent text-deep border-2 border-brown/40 hover:border-leaf hover:text-leaf hover:-translate-y-1',
+    ghost:    'bg-transparent text-leaf border-2 border-leaf hover:bg-leaf hover:text-offwhite hover:-translate-y-1',
+    dark:     'bg-deep text-offwhite hover:bg-brown hover:-translate-y-1 shadow-soft',
+  };
+  const cls = `${base} ${styles[variant]} ${className}`;
+  if (as === 'link' || href) return <a href={href} className={cls} onClick={onClick}>{children}</a>;
+  return <button type={type} onClick={onClick} className={cls}>{children}</button>;
+};
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const loc = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => { setOpen(false); }, [loc.pathname]);
+
+  const links = [
+    { to: '/', label: 'Home' },
+    { to: '/about', label: 'About Us' },
+    { to: '/contact', label: 'Contact Us' },
+  ];
+
+  return (
+    <header
+      className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-500 ${
+        scrolled
+          ? 'bg-cream/95 backdrop-blur-lg shadow-soft py-3'
+          : 'bg-base/40 backdrop-blur-md py-5'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-3 no-underline text-deep font-bold text-xl md:text-2xl tracking-tight">
+          <span className="w-11 h-11 rounded-organic bg-leaf flex items-center justify-center shadow-soft shrink-0">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+              <path d="M16 5c-4.5 0-8 3.5-8 8 0 4.5 3.5 8 8 8s8-3.5 8-8-3.5-8-8-8z" fill="#F0E8D9"/>
+              <path d="M16 10v11M11.5 15.5h9" stroke="#65734A" strokeWidth="1.6" strokeLinecap="round"/>
+              <circle cx="16" cy="10" r="1.4" fill="#C5A24A"/>
+            </svg>
+          </span>
+          <span className="whitespace-nowrap">Trust the Process</span>
+        </Link>
+
+        {/* Desktop nav */}
+        <nav className="hidden lg:flex items-center gap-9">
+          {links.map((l) => (
+            <NavLink
+              key={l.to}
+              to={l.to}
+              end={l.to === '/'}
+              className={({ isActive }) =>
+                `relative text-base font-medium transition-colors ${
+                  isActive ? 'text-leaf' : 'text-deep hover:text-leaf'
+                } group`
+              }
+            >
+              {({ isActive }) => (
+                <>
+                  {l.label}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-leaf transition-all duration-300 ${
+                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
+                  />
+                </>
+              )}
+            </NavLink>
+          ))}
+          <Link to="/contact" className="ml-2 px-6 py-2.5 rounded-full bg-leaf text-offwhite font-semibold text-sm hover:bg-deep hover:-translate-y-0.5 transition-all shadow-soft">
+            Book a Class
+          </Link>
+        </nav>
+
+        {/* Mobile hamburger */}
+        <button
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          onClick={() => setOpen(!open)}
+          className="lg:hidden flex flex-col gap-1.5 bg-transparent border-none p-2 z-[1100] cursor-pointer"
+        >
+          <span className={`block w-7 h-[2.5px] bg-deep rounded transition-all duration-300 ${open ? 'rotate-45 translate-y-[7px]' : ''}`} />
+          <span className={`block w-7 h-[2.5px] bg-deep rounded transition-all duration-300 ${open ? 'opacity-0 scale-x-0' : ''}`} />
+          <span className={`block w-7 h-[2.5px] bg-deep rounded transition-all duration-300 ${open ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+        </button>
+      </div>
+
+      {/* Mobile drawer */}
+      <div
+        className={`lg:hidden fixed top-0 left-0 w-full h-screen bg-cream/98 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 transition-transform duration-500 z-[1050] ${
+          open ? 'translate-y-0' : '-translate-y-full'
+        }`}
+      >
+        {links.map((l) => (
+          <NavLink
+            key={l.to}
+            to={l.to}
+            end={l.to === '/'}
+            className={({ isActive }) =>
+              `text-3xl font-semibold transition-colors ${
+                isActive ? 'text-leaf' : 'text-deep hover:text-leaf'
+              }`
+            }
+          >
+            {l.label}
+          </NavLink>
+        ))}
+        <Link to="/contact" className="mt-4 px-10 py-4 rounded-full bg-leaf text-offwhite font-semibold text-lg shadow-soft">
+          Book a Class
+        </Link>
+      </div>
+    </header>
+  );
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+function Footer() {
+  return (
+    <footer className="bg-deep text-offwhite/90 pt-20 pb-10 relative overflow-hidden">
+      <svg className="absolute top-0 left-0 w-full h-16 text-cream" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 C480,60 960,60 1440,0 L1440,0 L0,0 Z" fill="currentColor" />
+      </svg>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-8 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="w-11 h-11 rounded-organic bg-leaf flex items-center justify-center">
+                <svg width="22" height="22" viewBox="0 0 32 32">
+                  <path d="M16 5c-4.5 0-8 3.5-8 8 0 4.5 3.5 8 8 8s8-3.5 8-8-3.5-8-8-8z" fill="#F0E8D9"/>
+                  <path d="M16 10v11M11.5 15.5h9" stroke="#65734A" strokeWidth="1.6" strokeLinecap="round"/>
+                </svg>
+              </span>
+              <span className="font-bold text-xl tracking-tight">Trust the Process</span>
+            </div>
+            <p className="font-light text-offwhite/70 italic text-sm leading-relaxed">
+              Move with intention. Trust the process.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-base uppercase tracking-widest text-gold mb-5">Navigate</h4>
+            <ul className="space-y-3 list-none">
+              <li><Link to="/" className="hover:text-gold transition-colors">Home</Link></li>
+              <li><Link to="/about" className="hover:text-gold transition-colors">About Us</Link></li>
+              <li><Link to="/contact" className="hover:text-gold transition-colors">Contact Us</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-base uppercase tracking-widest text-gold mb-5">Services</h4>
+            <ul className="space-y-3 list-none">
+              <li>Yoga</li>
+              <li>Hot Yoga</li>
+              <li>Hot Pilates</li>
+              <li>Yin Yoga</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-base uppercase tracking-widest text-gold mb-5">Contact</h4>
+            <ul className="space-y-3 list-none">
+              <li>hello@trusttheprocess.co.za</li>
+              <li>+27 XX XXX XXXX</li>
+              <li>[Studio Address]</li>
+            </ul>
+            <div className="flex gap-4 mt-6">
+              {[
+                { name: 'Instagram', d: 'M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.17.43.37 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.17-1.06.37-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.42a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.17-.43-.37-1.06-.42-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.17 1.06-.37 2.23-.42C8.42 2.17 8.8 2.16 12 2.16Zm0 1.8c-3.14 0-3.51.01-4.75.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.66.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.61-.07 4.75s.01 3.51.07 4.75c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.66 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.66-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 0 0-.88-1.35 3.6 3.6 0 0 0-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.61-.07-4.75-.07Zm0 3.06a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Zm5.2-3.1a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z' },
+                { name: 'Facebook', d: 'M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.5-3.89 3.77-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z' },
+                { name: 'TikTok', d: 'M16.6 5.82a4.28 4.28 0 0 1-1.13-2.82h-3.2v12.55a2.6 2.6 0 1 1-2.6-2.6c.28 0 .55.04.8.12V9.82a5.87 5.87 0 0 0-.8-.05A5.8 5.8 0 1 0 15.47 15.5V9.3a7.44 7.44 0 0 0 4.33 1.4V7.5a4.27 4.27 0 0 1-3.2-1.68Z' },
+              ].map((s) => (
+                <a
+                  key={s.name}
+                  href="#"
+                  aria-label={s.name}
+                  className="w-10 h-10 rounded-full bg-offwhite/10 flex items-center justify-center hover:bg-leaf transition-colors"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d={s.d} />
+                  </svg>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="pt-8 border-t border-offwhite/15 text-center text-sm text-offwhite/60 font-light">
+          © 2026 Trust the Process. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+/* ============================================================
+   SECTION HEADING
+   ============================================================ */
+function SectionHeading({ eyebrow, title, subtitle, light = false, center = true }) {
+  return (
+    <div className={`${center ? 'text-center mx-auto' : ''} max-w-3xl mb-14 reveal`}>
+      {eyebrow && (
+        <p className={`uppercase tracking-[0.35em] text-xs font-semibold mb-4 ${light ? 'text-gold' : 'text-leaf'}`}>
+          {eyebrow}
+        </p>
+      )}
+      <h2 className={`font-bold text-4xl md:text-5xl leading-tight tracking-tight mb-5 ${light ? 'text-offwhite' : 'text-deep'}`}>
+        {title}
+      </h2>
+      {subtitle && (
+        <p className={`font-light text-lg leading-relaxed ${light ? 'text-offwhite/80' : 'text-brown'}`}>
+          {subtitle}
+        </p>
+      )}
+    </div>
+  );
+}
+
+/* ============================================================
+   ANIMATED BACKGROUND
+   ============================================================ */
+function AnimatedBackground() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <div className="blob absolute -top-24 -left-24 w-[420px] h-[420px] rounded-full bg-leaf/15 blur-3xl" />
+      <div className="blob absolute top-1/3 -right-32 w-[520px] h-[520px] rounded-full bg-gold/12 blur-3xl" style={{ animationDelay: '2s' }} />
+      <div className="blob absolute bottom-0 left-1/4 w-[380px] h-[380px] rounded-full bg-terra/10 blur-3xl" style={{ animationDelay: '4s' }} />
+    </div>
+  );
+}
+
+/* ============================================================
+   SERVICE CARD + MODAL
+   ============================================================ */
+const services = [
+  {
+    id: 'yoga',
+    title: 'Yoga',
+    short: 'Build strength, flexibility and awareness through mindful movement and breath.',
+    long: 'Our signature yoga classes weave together classical asana, conscious breath and mindful awareness. Whether you are stepping onto the mat for the first time or deepening a long-standing practice, each class is designed to meet you exactly where you are — building strength from the inside out.',
+    benefits: ['Improved flexibility', 'Greater body awareness', 'Calmer mind', 'Better balance'],
+    icon: (
+      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="32" cy="14" r="4" />
+        <path d="M32 18v14M20 44l12-12 12 12M22 32h20" />
+      </svg>
+    ),
+  },
+  {
+    id: 'hot-yoga',
+    title: 'Hot Yoga',
+    short: 'Challenge the body and deepen your practice in a heated environment designed to encourage movement and release.',
+    long: 'Practiced in a gently heated studio, Hot Yoga invites the body to open more deeply and the mind to soften its grip. The warmth encourages circulation, releases tension and supports a profound sense of detoxification and renewal — physically and emotionally.',
+    benefits: ['Deep stretching', 'Cardiovascular conditioning', 'Stress release', 'Detoxification'],
+    icon: (
+      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="32" cy="32" r="10" />
+        <path d="M32 8v6M32 50v6M8 32h6M50 32h6M15 15l4 4M45 45l4 4M49 15l-4 4M19 45l-4 4" />
+      </svg>
+    ),
+  },
+  {
+    id: 'hot-pilates',
+    title: 'Hot Pilates',
+    short: 'Build core strength, stability and control through focused, low-impact movement in a heated studio.',
+    long: 'Hot Pilates combines the precision of classical Pilates with the intensity of a heated environment. Focused, low-impact sequences strengthen the core, stabilise the spine and build long, lean muscle — all while the warmth helps the body move with greater freedom.',
+    benefits: ['Stronger core', 'Improved posture', 'Muscular endurance', 'Injury resilience'],
+    icon: (
+      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 44h40M16 44V28a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v16M24 24v-6M40 24v-6" />
+        <circle cx="32" cy="12" r="3" />
+      </svg>
+    ),
+  },
+  {
+    id: 'yin-yoga',
+    title: 'Yin Yoga',
+    short: 'Slow down, release tension and create space for stillness through longer-held restorative poses.',
+    long: 'Yin Yoga is a quiet, meditative practice. Poses are held for several minutes, allowing connective tissue to release and the nervous system to settle. It is the perfect counterbalance to a busy life — a practice of patience, surrender and deep rest.',
+    benefits: ['Deep relaxation', 'Fascial release', 'Improved sleep', 'Emotional balance'],
+    icon: (
+      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20 32c0-8 5-14 12-14s12 6 12 14-5 14-12 14-12-6-12-14z" />
+        <path d="M32 18v-6M32 52v-6M22 24l-4-4M46 44l4 4" />
+      </svg>
+    ),
+  },
+];
+
+function ServiceCard({ service, onOpen, index }) {
+  return (
+    <article
+      className="reveal group bg-offwhite rounded-[28px_8px_28px_8px] p-8 border border-cream shadow-soft hover:-translate-y-2 hover:shadow-large transition-all duration-500 cursor-pointer relative overflow-hidden"
+      style={{ transitionDelay: `${index * 80}ms` }}
+      onClick={() => onOpen(service)}
+      tabIndex={0}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen(service); } }}
+      aria-label={`Learn more about ${service.title}`}
+    >
+      <svg className="absolute -top-4 -right-4 w-24 h-24 text-leaf/10 group-hover:text-leaf/20 transition-colors duration-500" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+        <path d="M50 10c-15 0-27 12-27 27s12 27 27 27 27-12 27-27-12-27-27-27zm0 10v34M33 37h34" stroke="currentColor" strokeWidth="2" fill="none" />
+      </svg>
+
+      <div className="w-16 h-16 mb-6 text-leaf transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3">
+        {service.icon}
+      </div>
+      <h3 className="font-bold text-2xl mb-3 text-deep">{service.title}</h3>
+      <p className="font-light text-brown leading-relaxed mb-6">{service.short}</p>
+      <span className="inline-flex items-center gap-2 font-semibold text-sm text-leaf transition-all duration-300 group-hover:gap-4">
+        Learn More
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+      </span>
+    </article>
+  );
+}
+
+function ServiceModal({ service, onClose }) {
+  useEffect(() => {
+    const onKey = (e) => e.key === 'Escape' && onClose();
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
+
+  return (
+    <div className="modal-backdrop" onClick={onClose} role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div className="modal-panel bg-offwhite rounded-organic max-w-2xl w-full max-h-[85vh] overflow-y-auto p-10 relative" onClick={(e) => e.stopPropagation()}>
+        <button
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute top-5 right-5 w-10 h-10 rounded-full bg-cream hover:bg-leaf hover:text-offwhite flex items-center justify-center transition-all duration-300 text-xl"
+        >
+          ×
+        </button>
+
+        <div className="w-16 h-16 text-leaf mb-5">{service.icon}</div>
+        <h3 id="modal-title" className="font-bold text-3xl text-deep mb-4">{service.title}</h3>
+        <p className="font-light text-brown leading-relaxed mb-8">{service.long}</p>
+
+        <h4 className="font-semibold text-leaf uppercase tracking-widest text-xs mb-4">Benefits</h4>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 list-none">
+          {service.benefits.map((b) => (
+            <li key={b} className="flex items-center gap-3 text-deep font-light">
+              <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
+              {b}
+            </li>
+          ))}
+        </ul>
+
+        <Link to="/contact" onClick={onClose} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-leaf text-offwhite font-semibold hover:bg-deep hover:-translate-y-1 transition-all">
+          Book a Class
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+   CTA SECTION
+   ============================================================ */
+function CTASection({ title, text, buttonLabel = 'Get In Touch', to = '/contact' }) {
+  return (
+    <section className="relative py-24 md:py-32 overflow-hidden bg-deep text-offwhite">
+      <AnimatedBackground />
+      <svg className="absolute top-0 right-0 w-1/3 h-full opacity-10" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+        <circle cx="300" cy="200" r="180" stroke="#C5A24A" strokeWidth="1" />
+        <circle cx="300" cy="200" r="140" stroke="#C5A24A" strokeWidth="1" />
+        <circle cx="300" cy="200" r="100" stroke="#C5A24A" strokeWidth="1" />
+      </svg>
+
+      <div className="max-w-3xl mx-auto px-6 text-center relative reveal">
+        <h2 className="font-bold text-4xl md:text-5xl mb-5 leading-tight">{title}</h2>
+        <p className="font-light text-lg text-offwhite/80 mb-10 leading-relaxed">{text}</p>
+        <Link to={to} className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-gold text-deep font-semibold hover:bg-offwhite hover:-translate-y-1 transition-all shadow-soft">
+          {buttonLabel}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </Link>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================
+   PAGE 1 — HOME
+   ============================================================ */
+function HomePage() {
+  useReveal();
+  const [activeService, setActiveService] = useState(null);
+
+  return (
+    <div className="page-enter">
+      <section className="relative min-h-screen flex items-center pt-32 pb-24 overflow-hidden">
+        <AnimatedBackground />
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(5)].map((_, i) => (
+            <span
+              key={i}
+              className="leaf-float absolute"
+              style={{
+                top: `${15 + i * 15}%`,
+                left: `${8 + (i % 3) * 10}%`,
+                animationDelay: `${i * 1.6}s`,
+              }}
+            >
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="#65734A">
+                <path d="M12 2C7 2 3 6 3 11c0 3 1.5 5.5 4 7-1.5 2-1 5 1 6.5 2.5 2 6 2.5 9 1 3-1.5 4.5-5 3.5-8-1-3-3-5-6-5.5" />
+              </svg>
+            </span>
+          ))}
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-8 grid lg:grid-cols-12 gap-12 items-center relative z-10">
+          <div className="lg:col-span-6">
+            <p className="uppercase tracking-[0.4em] text-xs font-semibold text-leaf mb-6">
+              Yoga · Hot Yoga · Hot Pilates · Yin Yoga
+            </p>
+            <h1 className="font-bold text-[clamp(2.8rem,6vw,5rem)] leading-[1.05] tracking-tight text-deep mb-7">
+              Move With Intention.<br />
+              <span className="text-leaf">Trust the Process.</span>
+            </h1>
+            <p className="font-light text-xl text-brown leading-relaxed mb-10 max-w-xl">
+              A space to reconnect with your body, quiet the mind and cultivate a deeper sense of balance.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button as="link" href="#services" variant="primary">Explore Our Classes</Button>
+              <Link to="/about" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-semibold text-base tracking-wide border-2 border-brown/40 text-deep hover:border-leaf hover:text-leaf hover:-translate-y-1 transition-all">
+                About Trust the Process
+              </Link>
+            </div>
+          </div>
+
+          <div className="lg:col-span-6 relative">
+            <div className="relative rounded-organic overflow-hidden shadow-large aspect-[4/5] max-w-md mx-auto lg:ml-auto">
+              <img
+                src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=900&auto=format&fit=crop"
+                alt="A calm yoga practice in a warm, earthy studio"
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-deep/40 via-transparent to-transparent" />
+            </div>
+            <div className="hidden md:flex absolute -bottom-6 -left-6 bg-offwhite rounded-organic shadow-medium px-6 py-5 items-center gap-4 max-w-[240px]">
+              <div className="w-10 h-10 rounded-full bg-leaf/15 flex items-center justify-center shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#65734A" strokeWidth="1.8">
+                  <path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <p className="font-semibold text-sm text-deep leading-tight">A studio for</p>
+                <p className="text-xs text-brown font-light">body · mind · spirit</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative py-24 md:py-32 bg-cream">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 grid lg:grid-cols-2 gap-16 items-center">
+          <div className="relative reveal">
+            <div className="rounded-organic overflow-hidden aspect-[5/6] shadow-large">
+              <img
+                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&auto=format&fit=crop"
+                alt="A quiet moment of mindful breathing outdoors"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="absolute -bottom-8 -right-8 w-32 h-32 rounded-full bg-gold/30 blur-2xl" aria-hidden="true" />
+          </div>
+
+          <div className="reveal">
+            <p className="uppercase tracking-[0.35em] text-xs font-semibold text-leaf mb-5">More Than Movement</p>
+            <h2 className="font-bold text-4xl md:text-5xl leading-tight text-deep mb-6">
+              A practice that reaches beyond the mat.
+            </h2>
+            <p className="font-light text-lg text-brown leading-relaxed mb-6">
+              Trust the Process combines movement, mindfulness and spiritual wellness to create a space where
+              people can slow down, reconnect and grow — one breath, one posture, one moment at a time.
+            </p>
+            <p className="font-light text-lg text-brown leading-relaxed mb-8">
+              We believe that the way you move on the mat reflects the way you move through life. Our
+              classes are designed to build strength in the body, clarity in the mind and steadiness in the
+              heart.
+            </p>
+            <Link to="/about" className="inline-flex items-center gap-2 font-semibold text-leaf hover:gap-4 transition-all">
+              Discover our philosophy
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="relative py-24 md:py-32 bg-base">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
+          <SectionHeading
+            eyebrow="Our Classes"
+            title="Move. Breathe. Transform."
+            subtitle="Four practices, one intention — to help you return to yourself."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((s, i) => (
+              <ServiceCard key={s.id} service={s} index={i} onOpen={setActiveService} />
+            ))}
+          </div>
+        </div>
+        {activeService && <ServiceModal service={activeService} onClose={() => setActiveService(null)} />}
+      </section>
+
+      <section className="relative py-24 md:py-32 bg-cream overflow-hidden">
+        <svg className="absolute inset-0 w-full h-full opacity-25" viewBox="0 0 1440 600" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,300 C240,200 480,400 720,300 C960,200 1200,400 1440,300" stroke="#65734A" strokeWidth="1.5" fill="none" />
+          <path d="M0,360 C240,260 480,460 720,360 C960,260 1200,460 1440,360" stroke="#C5A24A" strokeWidth="1.2" fill="none" />
+          <path d="M0,420 C240,320 480,520 720,420 C960,320 1200,520 1440,420" stroke="#A6533F" strokeWidth="1" fill="none" />
+        </svg>
+
+        <div className="max-w-4xl mx-auto px-6 relative text-center reveal">
+          <p className="uppercase tracking-[0.4em] text-xs font-semibold text-leaf mb-5">Our Philosophy</p>
+          <h2 className="font-bold text-5xl md:text-6xl leading-tight text-deep mb-8">
+            Trust the Process.
+          </h2>
+          <p className="font-light text-xl text-brown leading-relaxed mb-6">
+            Presence. Patience. Self-awareness. Consistency. Growth.
+          </p>
+          <p className="font-light text-lg text-brown leading-relaxed max-w-2xl mx-auto">
+            We believe transformation does not happen overnight. It unfolds slowly, in the quiet moments
+            between effort and rest. The practice is not about reaching a perfect shape — it is about
+            showing up, again and again, with curiosity and kindness toward yourself.
+          </p>
+        </div>
+      </section>
+
+      <section className="relative py-24 md:py-32 bg-base">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
+          <SectionHeading
+            eyebrow="Why Trust the Process"
+            title="Four pillars of practice."
+            subtitle="Mind, body, spirit and community — held together in one space."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { t: 'Mind', d: 'Create space for clarity, awareness and inner stillness.', icon: 'M12 2a7 7 0 0 0-7 7c0 3 2 5.5 4 7v3h6v-3c2-1.5 4-4 4-7a7 7 0 0 0-7-7z' },
+              { t: 'Body', d: 'Build strength, mobility and confidence through intentional movement.', icon: 'M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5' },
+              { t: 'Spirit', d: 'Reconnect with yourself through mindfulness and meaningful practice.', icon: 'M12 3l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6l2-6z' },
+              { t: 'Community', d: 'Grow alongside a welcoming community of people on their own journey.', icon: 'M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm8 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM3 21v-2a5 5 0 0 1 5-5m13 7v-2a5 5 0 0 0-5-5' },
+            ].map((p, i) => (
+              <div
+                key={p.t}
+                className="reveal bg-offwhite rounded-organic p-8 border border-cream shadow-soft hover:-translate-y-2 hover:shadow-medium transition-all duration-500 text-center"
+                style={{ transitionDelay: `${i * 100}ms` }}
+              >
+                <div className="w-14 h-14 mx-auto mb-5 rounded-full bg-leaf/10 flex items-center justify-center">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#65734A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <path d={p.icon} />
+                  </svg>
+                </div>
+                <h3 className="font-bold text-xl mb-3 text-deep">{p.t}</h3>
+                <p className="font-light text-brown text-sm leading-relaxed">{p.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTASection
+        title="Your Journey Starts Here."
+        text="Whether you're beginning your practice or deepening an existing one, there is space for you here."
+        buttonLabel="Get In Touch"
+      />
+    </div>
+  );
+}
+
+/* ============================================================
+   PAGE 2 — ABOUT
+   ============================================================ */
+function AboutPage() {
+  useReveal();
+  const stages = [
+    { n: '01', t: 'Trust',   d: 'Begin by trusting where you are. The practice meets you exactly as you show up today.' },
+    { n: '02', t: 'Move',    d: 'Let the body lead. Movement becomes a conversation, not a command.' },
+    { n: '03', t: 'Breathe', d: 'The breath anchors the mind. In every posture, the breath comes first.' },
+    { n: '04', t: 'Release', d: 'Let go of tension, expectation and the need to be anywhere but here.' },
+    { n: '05', t: 'Grow',    d: 'Growth is quiet. It happens in the pauses, in the practice, in the process.' },
+  ];
+
+  const approach = [
+    { title: 'Mindful Movement', desc: 'Every class begins with awareness. We move with intention, not momentum.' },
+    { title: 'The Breath', desc: 'Breath is our teacher. It guides pace, deepens presence and calms the nervous system.' },
+    { title: 'Strength & Flexibility', desc: 'We build both — the power to hold and the softness to yield.' },
+    { title: 'Recovery', desc: 'Rest is part of the practice. Yin, stillness and conscious rest are non-negotiable.' },
+    { title: 'Mental Clarity', desc: 'A quiet mind is not the absence of thought — it is the space between them.' },
+    { title: 'Self-Awareness', desc: 'The mat becomes a mirror. What you notice on it, you carry into life.' },
+  ];
+
+  return (
+    <div className="page-enter">
+      <section className="relative pt-40 pb-24 md:pt-48 md:pb-32 overflow-hidden">
+        <AnimatedBackground />
+        <div className="max-w-5xl mx-auto px-6 text-center relative reveal">
+          <p className="uppercase tracking-[0.4em] text-xs font-semibold text-leaf mb-5">Our Story</p>
+          <h1 className="font-bold text-[clamp(2.6rem,5.5vw,4.5rem)] leading-[1.1] tracking-tight text-deep mb-6">
+            About Trust the Process
+          </h1>
+          <p className="font-light text-xl text-brown max-w-2xl mx-auto leading-relaxed">
+            A space created for movement, mindfulness and meaningful transformation.
+          </p>
+        </div>
+      </section>
+
+      <section className="relative py-20 md:py-28 bg-cream">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 grid lg:grid-cols-2 gap-16 items-center">
+          <div className="reveal">
+            <p className="uppercase tracking-[0.35em] text-xs font-semibold text-leaf mb-5">Our Story</p>
+            <h2 className="font-bold text-4xl md:text-5xl leading-tight text-deep mb-6">
+              Born from a simple belief.
+            </h2>
+            <div className="space-y-5 font-light text-lg text-brown leading-relaxed">
+              <p>
+                Trust the Process was born from a simple belief: that movement, when practiced with
+                awareness, can become a form of self-discovery. Wellness extends far beyond physical
+                fitness — it is the way we breathe, rest, respond and return to ourselves.
+              </p>
+              <p>
+                We created this studio as a sanctuary. A place where the noise of daily life softens,
+                where the body is respected rather than pushed, and where every person is invited to
+                move at their own pace.
+              </p>
+              <p>
+                Our classes blend classical yoga and Pilates traditions with modern understanding of
+                anatomy and nervous-system health. The result is a practice that is both grounding and
+                transformative.
+              </p>
+            </div>
+          </div>
+          <div className="relative reveal">
+            <div className="rounded-organic overflow-hidden aspect-[5/6] shadow-large">
+              <img
+                src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=900&auto=format&fit=crop"
+                alt="A warm studio interior with natural light and earthy tones"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="absolute -top-6 -left-6 w-28 h-28 rounded-full bg-leaf/20 blur-2xl" aria-hidden="true" />
+          </div>
+        </div>
+      </section>
+
+      <section className="relative py-24 md:py-32 bg-base">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
+          <SectionHeading
+            eyebrow="Our Philosophy"
+            title="Five stages of a personal journey."
+            subtitle="Trust. Move. Breathe. Release. Grow. These are not steps to complete — they are rhythms to return to."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+            {stages.map((s, i) => (
+              <div
+                key={s.n}
+                className="reveal bg-offwhite rounded-organic p-7 border border-cream shadow-soft hover:-translate-y-2 hover:shadow-medium transition-all duration-500"
+                style={{ transitionDelay: `${i * 100}ms` }}
+              >
+                <p className="font-bold text-3xl text-gold/60 mb-3">{s.n}</p>
+                <h3 className="font-bold text-xl text-deep mb-2">{s.t}</h3>
+                <p className="font-light text-brown text-sm leading-relaxed">{s.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative py-24 md:py-32 bg-cream">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
+          <SectionHeading
+            eyebrow="Our Approach"
+            title="How we practice."
+            subtitle="Every class is grounded in the same six principles — whether you are flowing in a heated room or resting in stillness."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {approach.map((a, i) => (
+              <div
+                key={a.title}
+                className="reveal bg-offwhite rounded-organic p-8 border border-cream shadow-soft hover:-translate-y-1 hover:shadow-medium transition-all duration-500"
+                style={{ transitionDelay: `${i * 80}ms` }}
+              >
+                <div className="w-10 h-10 rounded-full bg-leaf/10 flex items-center justify-center mb-4">
+                  <span className="w-2 h-2 rounded-full bg-leaf" />
+                </div>
+                <h3 className="font-bold text-lg text-deep mb-2">{a.title}</h3>
+                <p className="font-light text-brown text-sm leading-relaxed">{a.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative py-24 md:py-32 bg-base overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 grid lg:grid-cols-2 gap-16 items-center">
+          <div className="relative reveal order-2 lg:order-1">
+            <div className="rounded-organic overflow-hidden aspect-[5/6] shadow-large">
+              <img
+                src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=900&auto=format&fit=crop"
+                alt="A community of people practicing together in a bright studio"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div className="reveal order-1 lg:order-2">
+            <p className="uppercase tracking-[0.35em] text-xs font-semibold text-leaf mb-5">Community</p>
+            <h2 className="font-bold text-4xl md:text-5xl leading-tight text-deep mb-6">
+              Every body is different.<br />Every journey is personal.
+            </h2>
+            <p className="font-light text-lg text-brown leading-relaxed mb-6">
+              There is no need to rush the process. In our studio, you will find people at every stage —
+              beginners, seasoned practitioners, and everyone in between. What unites us is not
+              perfection, but presence.
+            </p>
+            <p className="font-light text-lg text-brown leading-relaxed mb-8">
+              We hold space for one another with warmth, respect and quiet encouragement. You are welcome
+              here, exactly as you are.
+            </p>
+            <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-leaf text-offwhite font-semibold hover:bg-deep hover:-translate-y-1 transition-all shadow-soft">
+              Join Our Community
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <CTASection
+        title="Begin where you are."
+        text="The first step is often the simplest — a single breath, a single class, a single moment of showing up."
+        buttonLabel="Book a Class"
+      />
+    </div>
+  );
+}
+
+/* ============================================================
+   PAGE 3 — CONTACT
+   ============================================================ */
+function ContactPage() {
+  useReveal();
+  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
+  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState('idle');
+
+  const validate = () => {
+    const e = {};
+    if (!form.name.trim()) e.name = 'Please enter your name';
+    if (!form.email.trim()) e.email = 'Please enter your email';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Please enter a valid email';
+    if (!form.subject.trim()) e.subject = 'Please enter a subject';
+    if (!form.message.trim()) e.message = 'Please enter a message';
+    return e;
+  };
+
+  const onSubmit = (ev) => {
+    ev.preventDefault();
+    const e = validate();
+    setErrors(e);
+    if (Object.keys(e).length) return;
+    setStatus('sending');
+    setTimeout(() => {
+      setStatus('success');
+      setForm({ name: '', email: '', phone: '', subject: '', message: '' });
+      setTimeout(() => setStatus('idle'), 5000);
+    }, 900);
+  };
+
+  const update = (k) => (ev) => {
+    setForm({ ...form, [k]: ev.target.value });
+    if (errors[k]) setErrors({ ...errors, [k]: undefined });
+  };
+
+  const inputCls = (k) =>
+    `w-full px-5 py-3.5 rounded-2xl bg-offwhite border font-light text-deep placeholder-brown/50 transition-all focus:outline-none focus:border-leaf focus:ring-2 focus:ring-leaf/20 ${
+      errors[k] ? 'border-terra' : 'border-cream'
+    }`;
+
+  return (
+    <div className="page-enter">
+      <section className="relative pt-40 pb-20 md:pt-48 md:pb-24 overflow-hidden">
+        <AnimatedBackground />
+        <div className="max-w-4xl mx-auto px-6 text-center relative reveal">
+          <p className="uppercase tracking-[0.4em] text-xs font-semibold text-leaf mb-5">Contact Us</p>
+          <h1 className="font-bold text-[clamp(2.6rem,5.5vw,4.5rem)] leading-[1.1] tracking-tight text-deep mb-6">
+            Let's Connect
+          </h1>
+          <p className="font-light text-xl text-brown max-w-2xl mx-auto leading-relaxed">
+            Have a question about classes, memberships or starting your wellness journey? We'd love to hear from you.
+          </p>
+        </div>
+      </section>
+
+      <section className="relative pb-20 bg-base">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            { icon: 'M4 6h16v12H4zM4 6l8 7 8-7', label: 'Email', value: 'hello@trusttheprocess.co.za' },
+            { icon: 'M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z', label: 'Phone', value: '+27 XX XXX XXXX' },
+            { icon: 'M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0zM12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z', label: 'Studio', value: '[Studio Address]' },
+            { icon: 'M12 8v4l3 2M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9z', label: 'Hours', value: 'Mon – Sun' },
+          ].map((c, i) => (
+            <div
+              key={c.label}
+              className="reveal bg-offwhite rounded-organic p-7 border border-cream shadow-soft hover:-translate-y-2 hover:shadow-medium transition-all duration-500"
+              style={{ transitionDelay: `${i * 80}ms` }}
+            >
+              <div className="w-12 h-12 rounded-full bg-leaf/10 flex items-center justify-center mb-4">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#65734A" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                  <path d={c.icon} />
+                </svg>
+              </div>
+              <p className="uppercase tracking-widest text-xs font-semibold text-leaf mb-1">{c.label}</p>
+              <p className="font-medium text-deep text-sm break-words">{c.value}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="relative py-24 md:py-28 bg-cream">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 grid lg:grid-cols-2 gap-14">
+          <div className="reveal">
+            <h2 className="font-bold text-3xl md:text-4xl text-deep mb-3">Send us a message</h2>
+            <p className="font-light text-brown mb-8">We typically respond within one business day.</p>
+
+            {status === 'success' && (
+              <div className="mb-6 px-5 py-4 rounded-2xl bg-leaf/12 border border-leaf/30 text-leaf font-medium flex items-center gap-3">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                Thank you — your message has been sent. We'll be in touch soon.
+              </div>
+            )}
+
+            <form onSubmit={onSubmit} noValidate className="space-y-5">
+              <div>
+                <label htmlFor="name" className="block text-sm font-semibold text-deep mb-2">Full Name *</label>
+                <input id="name" type="text" value={form.name} onChange={update('name')} className={inputCls('name')} placeholder="Your full name" />
+                {errors.name && <p className="text-terra text-xs mt-1.5">{errors.name}</p>}
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label htmlFor="email" className="block text-sm font-semibold text-deep mb-2">Email Address *</label>
+                  <input id="email" type="email" value={form.email} onChange={update('email')} className={inputCls('email')} placeholder="you@example.com" />
+                  {errors.email && <p className="text-terra text-xs mt-1.5">{errors.email}</p>}
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-semibold text-deep mb-2">Phone Number</label>
+                  <input id="phone" type="tel" value={form.phone} onChange={update('phone')} className={inputCls('phone')} placeholder="+27 ..." />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="subject" className="block text-sm font-semibold text-deep mb-2">Subject *</label>
+                <input id="subject" type="text" value={form.subject} onChange={update('subject')} className={inputCls('subject')} placeholder="How can we help?" />
+                {errors.subject && <p className="text-terra text-xs mt-1.5">{errors.subject}</p>}
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-semibold text-deep mb-2">Message *</label>
+                <textarea id="message" rows="5" value={form.message} onChange={update('message')} className={inputCls('message') + ' resize-none'} placeholder="Tell us a little about what you're looking for..." />
+                {errors.message && <p className="text-terra text-xs mt-1.5">{errors.message}</p>}
+              </div>
+
+              <Button type="submit" variant="primary" className="w-full sm:w-auto">
+                {status === 'sending' ? 'Sending…' : 'Send Message'}
+              </Button>
+            </form>
+          </div>
+
+          <div className="reveal">
+            <h2 className="font-bold text-3xl md:text-4xl text-deep mb-3">Visit the studio</h2>
+            <p className="font-light text-brown mb-8">We'd love to welcome you in person. Directions are available on request.</p>
+            <div className="rounded-organic overflow-hidden shadow-medium aspect-[4/3] bg-base relative border border-cream">
+              <svg viewBox="0 0 600 450" className="w-full h-full" aria-label="Studio location placeholder map">
+                <rect width="600" height="450" fill="#F0E8D9" />
+                <g stroke="#8A6A4A" strokeOpacity="0.25" strokeWidth="1.5">
+                  <path d="M0 120 L600 100" />
+                  <path d="M0 240 L600 260" />
+                  <path d="M0 360 L600 340" />
+                  <path d="M120 0 L140 450" />
+                  <path d="M300 0 L290 450" />
+                  <path d
