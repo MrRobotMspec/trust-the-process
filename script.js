@@ -1,12 +1,6 @@
-/* ============================================================
-   TRUST THE PROCESS — script.js
-   Vanilla JS for interactivity, animations, navigation
-   ============================================================ */
-
 (function () {
   'use strict';
 
-  // ---------- HELPERS ----------
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
@@ -25,7 +19,6 @@
     setActiveNavLink();
   });
 
-  // ---------- SCROLL PROGRESS ----------
   function initScrollProgress() {
     const bar = $('#scrollProgress');
     if (!bar) return;
@@ -41,7 +34,6 @@
     update();
   }
 
-  // ---------- STICKY NAV (shadow on scroll) ----------
   function initStickyNav() {
     const header = $('#siteHeader');
     if (!header) return;
@@ -58,7 +50,6 @@
     onScroll();
   }
 
-  // ---------- MOBILE MENU ----------
   function initMobileMenu() {
     const hamburger = $('#hamburger');
     const mobileMenu = $('#mobileMenu');
@@ -71,7 +62,6 @@
       mobileMenu.setAttribute('aria-hidden', String(!isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
 
-      // Animate hamburger bars
       const bars = $$('.bar', hamburger);
       if (isOpen) {
         bars[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
@@ -86,12 +76,10 @@
 
     hamburger.addEventListener('click', () => toggle());
 
-    // Close on link click
     $$('.mobile-link, .mobile-cta', mobileMenu).forEach((link) => {
       link.addEventListener('click', () => toggle(false));
     });
 
-    // Close on escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
         toggle(false);
@@ -99,7 +87,6 @@
     });
   }
 
-  // ---------- SCROLL REVEAL (IntersectionObserver) ----------
   function initScrollReveal() {
     if (prefersReducedMotion) {
       $$('.reveal').forEach((el) => el.classList.add('visible'));
@@ -121,7 +108,6 @@
     $$('.reveal').forEach((el) => observer.observe(el));
   }
 
-  // ---------- PHILOSOPHY ROTATOR ----------
   function initPhilosophyRotator() {
     const rotator = $('#philosophyRotator');
     if (!rotator) return;
@@ -143,7 +129,6 @@
     }, 2800);
   }
 
-  // ---------- FAQ ACCORDION ----------
   function initFAQ() {
     const questions = $$('.faq-question');
     if (questions.length === 0) return;
@@ -162,7 +147,6 @@
     });
   }
 
-  // ---------- BACK TO TOP ----------
   function initBackToTop() {
     const btn = $('#backToTop');
     if (!btn) return;
@@ -179,7 +163,6 @@
     });
   }
 
-  // ---------- SMOOTH SCROLL FOR HASH LINKS ----------
   function initSmoothScroll() {
     $$('a[href^="#"]').forEach((link) => {
       link.addEventListener('click', (e) => {
@@ -197,7 +180,6 @@
     });
   }
 
-  // ---------- ACTIVE NAV LINK ----------
   function setActiveNavLink() {
     const path = window.location.pathname.split('/').pop() || 'index.html';
     const links = $$('.nav-link');
