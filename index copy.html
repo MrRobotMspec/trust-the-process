@@ -1,351 +1,601 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Trust the Process is a wellness and fitness establishment offering Yoga, Hot Yoga, Hot Pilates and Yin Yoga. A space for movement, mindfulness and transformation.">
-    <meta name="keywords" content="yoga, pilates, wellness, fitness, meditation, mindfulness, hot yoga, yin yoga">
-    <meta name="author" content="Trust the Process">
-    <meta property="og:title" content="Trust the Process | Wellness, Yoga & Fitness">
-    <meta property="og:description" content="A space for movement, mindfulness and transformation — where physical practice meets inner wellbeing.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPOSITORY/">
-    <meta property="og:image" content="./assets/images/og-image.jpg">
-    <link rel="canonical" href="https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPOSITORY/">
-    <title>Trust the Process | Wellness, Yoga & Fitness</title>
-    <link rel="icon" type="image/x-icon" href="./assets/logo/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rooted Movement | Yoga, Pilates, Mobility & Spiritual Wellness Studio</title>
+<meta name="description" content="A premium holistic wellness studio offering yoga, Pilates, mobility training, strength, flexibility, and spiritual wellness classes. Move. Strengthen. Breathe. Transform." />
+<meta property="og:title" content="Rooted Movement | Yoga, Pilates & Wellness Studio" />
+<meta property="og:description" content="Discover a holistic approach to movement and wellbeing through yoga, Pilates, mobility training and spiritual wellness." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+<style>
+:root{--beige:#EFE6D8;--sand:#E3D4BC;--cream:#FAF6EF;--brown:#6B4F3A;--terracotta:#C1684A;--sage:#A8B39A;--olive:#7C8B6B;--mustard:#D4A74A;--forest:#2F3E2E;--forest-deep:#1F2A1E;--red-accent:#B14A38;--ink:#2A2622;--muted:#7A6F63;--font-head:"Montserrat",system-ui,sans-serif;--font-body:"Fraunces",Georgia,serif;--radius-sm:10px;--radius-md:20px;--radius-lg:40px;--radius-pill:999px;--shadow-sm:0 4px 14px rgba(47,62,46,.06);--shadow-md:0 12px 40px rgba(47,62,46,.10);--shadow-lg:0 24px 70px rgba(47,62,46,.14);--ease:cubic-bezier(0.22,1,0.36,1)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font-body);font-size:17px;line-height:1.7;color:var(--ink);background:var(--cream);overflow-x:hidden}
+img{max-width:100%;display:block;height:auto}
+a{color:var(--forest);text-decoration:none;transition:color .3s var(--ease)}
+a:hover{color:var(--terracotta)}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+ul{list-style:none;padding:0;margin:0}
+h1,h2,h3,h4,h5{font-family:var(--font-head);font-weight:600;letter-spacing:.01em;color:var(--forest);line-height:1.2;margin:0 0 1rem}
+h1{font-size:clamp(2.4rem,6vw,4.5rem);font-weight:700;letter-spacing:-.01em}
+h2{font-size:clamp(1.9rem,4vw,3rem)}
+h3{font-size:clamp(1.3rem,2.2vw,1.75rem)}
+h4{font-size:1.15rem;letter-spacing:.02em}
+p{margin:0 0 1rem;color:var(--ink)}
+.eyebrow{font-family:var(--font-head);font-size:.78rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--terracotta);display:inline-block;margin-bottom:1rem}
+.container{width:min(1200px,92%);margin-inline:auto}
+.section{padding:8rem 0}
+.section--tight{padding:5rem 0}
+.section--sand{background:var(--sand)}
+.section--beige{background:var(--beige)}
+.section--forest{background:var(--forest);color:var(--cream)}
+.section--forest h1,.section--forest h2,.section--forest h3{color:var(--cream)}
+.section--forest p{color:rgba(250,246,239,.82)}
+.text-center{text-align:center}
+.mb-lg{margin-bottom:3rem}
+.lead{font-size:1.15rem;color:var(--muted);max-width:62ch}
+.section--forest .lead{color:rgba(250,246,239,.75)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--font-head);font-size:.82rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:1rem 1.9rem;border-radius:var(--radius-pill);transition:transform .35s var(--ease),background .35s var(--ease),color .35s var(--ease),box-shadow .35s var(--ease);position:relative;overflow:hidden;cursor:pointer;white-space:nowrap}
+.btn--primary{background:var(--forest);color:var(--cream)}
+.btn--primary:hover{background:var(--forest-deep);color:var(--cream);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.btn--terracotta{background:var(--terracotta);color:var(--cream)}
+.btn--terracotta:hover{background:var(--red-accent);color:var(--cream);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.btn--ghost{background:transparent;color:var(--forest);border:1.5px solid var(--forest)}
+.btn--ghost:hover{background:var(--forest);color:var(--cream);transform:translateY(-3px)}
+.btn--ghost-light{background:transparent;color:var(--cream);border:1.5px solid rgba(250,246,239,.6)}
+.btn--ghost-light:hover{background:var(--cream);color:var(--forest);border-color:var(--cream);transform:translateY(-3px)}
+.btn .arrow{transition:transform .35s var(--ease)}
+.btn:hover .arrow{transform:translateX(5px)}
+.site-header{position:sticky;top:0;z-index:1000;background:rgba(250,246,239,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(47,62,46,.06);transition:padding .35s var(--ease),background .35s var(--ease)}
+.site-header.scrolled{background:rgba(250,246,239,.96);box-shadow:0 4px 24px rgba(47,62,46,.06)}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 0;gap:1.5rem}
+.logo{font-family:var(--font-head);font-weight:700;font-size:1.15rem;letter-spacing:.06em;color:var(--forest);display:flex;align-items:center;gap:.6rem;white-space:nowrap}
+.logo .logo-mark{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--mustard),var(--terracotta) 70%);display:inline-block}
+.nav-links{display:flex;gap:1.5rem;align-items:center;font-family:var(--font-head);font-size:.82rem;font-weight:500;letter-spacing:.04em}
+.nav-links a{color:var(--forest);position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--terracotta);transition:width .35s var(--ease)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--terracotta)}
+.nav-cta{display:flex;align-items:center;gap:.8rem}
+.hamburger{display:none;width:42px;height:42px;border-radius:50%;background:var(--forest);align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:20px;height:2px;background:var(--cream);border-radius:2px;transition:transform .3s var(--ease),opacity .3s var(--ease)}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{position:fixed;inset:0 0 0 auto;width:min(340px,88%);background:var(--cream);padding:6rem 2rem 2rem;transform:translateX(100%);transition:transform .45s var(--ease);z-index:999;overflow-y:auto;box-shadow:-10px 0 40px rgba(47,62,46,.18)}
+.mobile-nav.open{transform:translateX(0)}
+.mobile-nav a{display:block;font-family:var(--font-head);font-size:1rem;font-weight:500;padding:.9rem 0;border-bottom:1px solid rgba(47,62,46,.08);color:var(--forest)}
+.mobile-nav a.active{color:var(--terracotta)}
+.mobile-nav .btn{margin-top:1.5rem;width:100%;justify-content:center}
+.overlay{position:fixed;inset:0;background:rgba(31,42,30,.4);opacity:0;pointer-events:none;transition:opacity .35s var(--ease);z-index:998}
+.overlay.open{opacity:1;pointer-events:auto}
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;background:var(--forest)}
+.hero__media{position:absolute;inset:0;z-index:1}
+.hero__media img{width:100%;height:100%;object-fit:cover;opacity:.55;transform:scale(1.05);animation:heroZoom 18s var(--ease) forwards}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(31,42,30,.85) 0%,rgba(31,42,30,.55) 45%,rgba(31,42,30,.25) 100%);z-index:2}
+.hero__content{position:relative;z-index:3;color:var(--cream);max-width:720px;padding:6rem 0}
+.hero__content h1{color:var(--cream);margin-bottom:1.4rem}
+.hero__content h1 em{font-style:normal;color:var(--mustard)}
+.hero__content p{color:rgba(250,246,239,.9);font-size:1.15rem;max-width:58ch;margin-bottom:2.2rem}
+.hero__actions{display:flex;gap:1rem;flex-wrap:wrap}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.45;pointer-events:none;z-index:0}
+.blob--1{width:380px;height:380px;background:var(--terracotta);top:-120px;right:-80px;animation:float 14s ease-in-out infinite}
+.blob--2{width:320px;height:320px;background:var(--olive);bottom:-100px;left:-60px;animation:float 18s ease-in-out infinite reverse}
+.blob--3{width:260px;height:260px;background:var(--mustard);top:40%;right:15%;opacity:.28;animation:float 22s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(20px,-30px) scale(1.08)}}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.split--reverse .split__media{order:2}
+.split__media{position:relative;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow-lg)}
+.split__media img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.split__media:hover img{transform:scale(1.06)}
+.split__media--wide{aspect-ratio:5/4}
+.split__content h2{margin-bottom:1.2rem}
+.grid{display:grid;gap:1.8rem}
+.grid--3{grid-template-columns:repeat(3,1fr)}
+.grid--2{grid-template-columns:repeat(2,1fr)}
+.grid--4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--cream);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .45s var(--ease),box-shadow .45s var(--ease);display:flex;flex-direction:column;position:relative}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.card__media{aspect-ratio:16/11;overflow:hidden}
+.card__media img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.card:hover .card__media img{transform:scale(1.08)}
+.card__body{padding:1.6rem 1.6rem 1.8rem;flex:1;display:flex;flex-direction:column}
+.card__body h3{margin-bottom:.6rem}
+.card__body p{color:var(--muted);font-size:.97rem;flex:1}
+.card__link{font-family:var(--font-head);font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--terracotta);display:inline-flex;align-items:center;gap:.5rem;margin-top:1rem}
+.card__link .arrow{transition:transform .35s var(--ease)}
+.card:hover .card__link .arrow{transform:translateX(6px)}
+.icon-badge{width:60px;height:60px;border-radius:50%;background:var(--beige);display:inline-flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:1rem;color:var(--forest)}
+.value-item{display:flex;gap:1.2rem;align-items:flex-start}
+.value-item__num{font-family:var(--font-head);font-weight:700;font-size:1.4rem;color:var(--terracotta);min-width:3rem;padding-top:2px}
+.value-item h4{margin-bottom:.4rem}
+.value-item p{color:var(--muted);font-size:.95rem}
+.carousel{position:relative;overflow:hidden;border-radius:var(--radius-lg)}
+.carousel__track{display:flex;transition:transform .7s var(--ease)}
+.slide{min-width:100%;padding:clamp(2rem,5vw,4rem);background:var(--cream);border-radius:var(--radius-lg);text-align:center}
+.slide blockquote{font-family:var(--font-body);font-size:clamp(1.1rem,2vw,1.4rem);font-style:italic;color:var(--forest);max-width:62ch;margin:0 auto 1.4rem;line-height:1.6}
+.slide cite{font-family:var(--font-head);font-style:normal;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terracotta)}
+.carousel__nav{display:flex;justify-content:center;gap:.8rem;margin-top:1.8rem}
+.carousel__nav button{width:12px;height:12px;border-radius:50%;background:rgba(47,62,46,.2);transition:background .3s var(--ease),transform .3s var(--ease)}
+.carousel__nav button.active{background:var(--terracotta);transform:scale(1.2)}
+.faq{max-width:780px;margin-inline:auto}
+.faq__item{border-bottom:1px solid rgba(47,62,46,.12)}
+.faq__q{width:100%;text-align:left;padding:1.4rem 0;font-family:var(--font-head);font-size:1.05rem;font-weight:500;color:var(--forest);display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq__q::after{content:"+";font-size:1.6rem;color:var(--terracotta);transition:transform .35s var(--ease);line-height:1}
+.faq__item.open .faq__q::after{transform:rotate(45deg)}
+.faq__a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease),padding .3s var(--ease);color:var(--muted)}
+.faq__item.open .faq__a{max-height:400px;padding-bottom:1.4rem}
+.cta-banner{position:relative;border-radius:var(--radius-lg);overflow:hidden;padding:clamp(3rem,7vw,6rem) clamp(1.5rem,5vw,5rem);background:linear-gradient(120deg,var(--forest) 0%,var(--olive) 100%);color:var(--cream);text-align:center}
+.cta-banner h2{color:var(--cream);margin-bottom:1rem}
+.cta-banner p{color:rgba(250,246,239,.85);max-width:60ch;margin:0 auto 2rem}
+.cta-banner .btn--ghost-light{margin-inline:.4rem}
+.site-footer{background:var(--forest-deep);color:rgba(250,246,239,.75);padding:5rem 0 2rem;font-size:.94rem}
+.site-footer h4{color:var(--cream);font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.2rem}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr;gap:2.5rem;margin-bottom:3rem}
+.footer-brand p{color:rgba(250,246,239,.7);margin:1rem 0 1.4rem;max-width:34ch}
+.footer-brand .logo{color:var(--cream)}
+.footer-links li{margin-bottom:.7rem}
+.footer-links a{color:rgba(250,246,239,.7)}
+.footer-links a:hover{color:var(--mustard)}
+.social-row{display:flex;gap:.7rem}
+.social-row a{width:38px;height:38px;border-radius:50%;background:rgba(250,246,239,.08);display:inline-flex;align-items:center;justify-content:center;color:var(--cream);transition:background .3s var(--ease),transform .3s var(--ease)}
+.social-row a:hover{background:var(--terracotta);transform:translateY(-3px);color:var(--cream)}
+.newsletter{display:flex;gap:.5rem;margin-top:1rem}
+.newsletter input{flex:1;padding:.85rem 1rem;border-radius:var(--radius-pill);border:1px solid rgba(250,246,239,.2);background:rgba(250,246,239,.06);color:var(--cream);font-family:var(--font-body);font-size:.9rem;outline:none;transition:border-color .3s var(--ease)}
+.newsletter input::placeholder{color:rgba(250,246,239,.45)}
+.newsletter input:focus{border-color:var(--mustard)}
+.newsletter button{background:var(--terracotta);color:var(--cream);border-radius:var(--radius-pill);padding:0 1.4rem;font-family:var(--font-head);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:background .3s var(--ease)}
+.newsletter button:hover{background:var(--mustard);color:var(--forest-deep)}
+.footer-bottom{border-top:1px solid rgba(250,246,239,.1);padding-top:1.8rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.82rem;color:rgba(250,246,239,.55)}
+.back-to-top{position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:50%;background:var(--forest);color:var(--cream);display:flex;align-items:center;justify-content:center;font-size:1.1rem;opacity:0;pointer-events:none;transform:translateY(20px);transition:opacity .35s var(--ease),transform .35s var(--ease),background .3s var(--ease);z-index:900;box-shadow:var(--shadow-md)}
+.back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:var(--terracotta);color:var(--cream)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal--delay-1{transition-delay:.12s}
+.reveal--delay-2{transition-delay:.24s}
+.reveal--delay-3{transition-delay:.36s}
+.page-hero{position:relative;padding:clamp(5rem,10vw,8rem) 0 clamp(4rem,8vw,6rem);background:var(--forest);color:var(--cream);overflow:hidden;text-align:center}
+.page-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(212,167,74,0.18),transparent 60%),radial-gradient(circle at 80% 80%,rgba(193,104,74,0.20),transparent 60%);pointer-events:none}
+.page-hero__content{position:relative;z-index:2;max-width:780px;margin-inline:auto}
+.page-hero h1{color:var(--cream)}
+.page-hero p{color:rgba(250,246,239,.82);font-size:1.1rem;margin-top:1rem}
+.page-hero .eyebrow{color:var(--mustard)}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.value-card{padding:2rem 1.6rem;background:var(--cream);border-radius:var(--radius-md);border:1px solid rgba(47,62,46,.08);transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease)}
+.value-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:rgba(193,104,74,.35)}
+.value-card .icon-badge{background:var(--beige)}
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:"";position:absolute;left:.5rem;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--terracotta),var(--olive));border-radius:2px}
+.timeline__item{position:relative;padding:0 0 2.2rem 1.6rem}
+.timeline__item::before{content:"";position:absolute;left:-.05rem;top:.5rem;width:14px;height:14px;border-radius:50%;background:var(--cream);border:3px solid var(--terracotta);transform:translateX(-50%)}
+.timeline__item h4{margin-bottom:.4rem}
+.timeline__item span{font-family:var(--font-head);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--terracotta)}
+.timeline__item p{color:var(--muted);margin-top:.6rem}
+.philosophy{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,4rem);align-items:center}
+.philosophy__quote{font-family:var(--font-body);font-size:clamp(1.3rem,2.4vw,1.8rem);font-style:italic;line-height:1.5;color:var(--forest);position:relative;padding-left:1.8rem}
+.philosophy__quote::before{content:"“";position:absolute;left:-.2rem;top:-.8rem;font-size:4rem;color:var(--terracotta);font-family:var(--font-body);line-height:1}
+.pill-row{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:2.5rem}
+.pill-btn{font-family:var(--font-head);font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:.7rem 1.35rem;border-radius:var(--radius-pill);background:transparent;color:var(--forest);border:1.5px solid rgba(47,62,46,.18);transition:all .3s var(--ease)}
+.pill-btn:hover{border-color:var(--forest)}
+.pill-btn.active{background:var(--terracotta);color:var(--cream);border-color:var(--terracotta)}
+.tabs{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:2.5rem}
+.tab-btn{font-family:var(--font-head);font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:.75rem 1.4rem;border-radius:var(--radius-pill);background:transparent;color:var(--forest);border:1.5px solid rgba(47,62,46,.2);transition:all .3s var(--ease)}
+.tab-btn:hover{border-color:var(--forest)}
+.tab-btn.active{background:var(--forest);color:var(--cream);border-color:var(--forest)}
+.tab-panels{position:relative}
+.tab-panel{display:none;animation:fadeIn .5s var(--ease)}
+.tab-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.practice-card{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:center;background:var(--cream);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md)}
+.practice-card__media{aspect-ratio:4/3;overflow:hidden;height:100%}
+.practice-card__media img{width:100%;height:100%;object-fit:cover}
+.practice-card__body{padding:clamp(1.5rem,4vw,3rem)}
+.practice-card__body h3{margin-bottom:.8rem}
+.practice-card__body ul{margin:1.2rem 0;color:var(--muted)}
+.practice-card__body li{padding:.35rem 0}
+.practice-card__body li::before{content:"◦ ";color:var(--terracotta);font-weight:700}
+.benefit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.benefit{padding:1.4rem;border-radius:var(--radius-md);background:var(--beige);display:flex;gap:.9rem;align-items:flex-start;transition:transform .35s var(--ease),background .35s var(--ease)}
+.benefit:hover{transform:translateY(-4px);background:var(--sand)}
+.benefit__dot{width:12px;height:12px;border-radius:50%;background:var(--terracotta);margin-top:.45rem;flex-shrink:0}
+.benefit h4{margin:0 0 .3rem;font-size:1rem}
+.benefit p{margin:0;font-size:.92rem;color:var(--muted)}
+.move-panel{background:var(--cream);border-radius:var(--radius-lg);padding:clamp(2rem,5vw,3.5rem);box-shadow:var(--shadow-md);display:none;animation:fadeIn .5s var(--ease)}
+.move-panel.active{display:block}
+.move-panel h3{margin-bottom:.8rem}
+.move-panel p{color:var(--muted);margin-bottom:1.4rem}
+.move-panel ul{color:var(--muted)}
+.move-panel li{padding:.4rem 0}
+.move-panel li::before{content:"✓ ";color:var(--terracotta);font-weight:700}
+.schedule-wrap{overflow-x:auto;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);background:var(--cream)}
+.schedule{width:100%;border-collapse:collapse;min-width:720px;font-size:.96rem}
+.schedule th,.schedule td{padding:1.2rem 1.4rem;text-align:left;border-bottom:1px solid rgba(47,62,46,.08)}
+.schedule th{font-family:var(--font-head);font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--forest);background:var(--beige)}
+.schedule tr:last-child td{border-bottom:none}
+.schedule tr{transition:background .3s var(--ease)}
+.schedule tbody tr:hover{background:var(--beige)}
+.schedule td:first-child{font-family:var(--font-head);font-weight:600;color:var(--forest)}
+.level-tag{display:inline-block;font-family:var(--font-head);font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .75rem;border-radius:var(--radius-pill);background:var(--sand);color:var(--forest)}
+.level-tag--beginner{background:#E4EBD9;color:#4A5A3B}
+.level-tag--intermediate{background:#F1DCC2;color:#7A5324}
+.level-tag--all{background:#DFE7EA;color:#3E545C}
+.schedule .btn{padding:.6rem 1.1rem;font-size:.72rem}
+.form-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:flex-start}
+.form-group{margin-bottom:1.3rem}
+.form-group label{display:block;font-family:var(--font-head);font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);margin-bottom:.5rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.95rem 1.1rem;border:1.5px solid rgba(47,62,46,.15);border-radius:var(--radius-sm);background:var(--cream);font-family:var(--font-body);font-size:1rem;color:var(--ink);outline:none;transition:border-color .3s var(--ease),box-shadow .3s var(--ease)}
+.form-group textarea{resize:vertical;min-height:140px}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--terracotta);box-shadow:0 0 0 4px rgba(193,104,74,.12)}
+.form-group input.invalid,.form-group textarea.invalid{border-color:var(--red-accent)}
+.error-msg{display:block;font-size:.82rem;color:var(--red-accent);margin-top:.4rem;min-height:1rem;font-family:var(--font-head);letter-spacing:.02em}
+.form-status{font-family:var(--font-head);font-size:.9rem;color:var(--olive);margin-top:1rem;letter-spacing:.03em}
+.info-card{padding:1.6rem;border-radius:var(--radius-md);background:var(--beige);margin-bottom:1rem;transition:transform .35s var(--ease),background .35s var(--ease)}
+.info-card:hover{transform:translateY(-4px);background:var(--sand)}
+.info-card h4{margin-bottom:.5rem}
+.info-card p{margin:0;color:var(--muted);font-size:.95rem}
+.info-card a{color:var(--terracotta);font-weight:500}
+.calm-shapes{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.calm-shapes span{position:absolute;border-radius:50%;filter:blur(70px);opacity:.32}
+.calm-shapes span:nth-child(1){width:320px;height:320px;background:var(--mustard);top:10%;left:-80px;animation:float 22s ease-in-out infinite}
+.calm-shapes span:nth-child(2){width:280px;height:280px;background:var(--terracotta);bottom:15%;right:-60px;animation:float 26s ease-in-out infinite reverse}
+.calm-shapes span:nth-child(3){width:220px;height:220px;background:var(--sage);top:45%;right:25%;opacity:.22;animation:float 32s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.08);opacity:.9}}
+.breath-orb{width:220px;height:220px;margin:2rem auto;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--mustard),var(--terracotta) 70%);box-shadow:0 20px 60px rgba(193,104,74,.28);animation:breathe 8s ease-in-out infinite}
+@media (max-width:1024px){.nav-links{display:none}.nav-cta .btn{display:none}.hamburger{display:flex}.grid--4,.grid--3,.grid--2{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.split--reverse .split__media{order:0}.values-grid{grid-template-columns:repeat(2,1fr)}.philosophy{grid-template-columns:1fr}.practice-card{grid-template-columns:1fr}}
+@media (max-width:720px){.section{padding:4.5rem 0}.section--tight{padding:3rem 0}.grid--3,.grid--2,.grid--4{grid-template-columns:1fr}.hero{min-height:82vh}.hero__actions{flex-direction:column;align-items:stretch}.hero__actions .btn{justify-content:center}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;align-items:flex-start}.values-grid{grid-template-columns:1fr}.form-wrap{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}.reveal{opacity:1;transform:none}}
+</style>
 </head>
 <body>
-    <a href="#main-content" class="skip-to-main">Skip to main content</a>
-    
-    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="./index.html" class="logo-link">
-                    <span class="logo-text">Trust the Process</span>
-                </a>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-item">
-                    <a href="./index.html" class="nav-link active">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#practices" class="nav-link">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./about.html" class="nav-link">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./contact.html" class="nav-link">Contact</a>
-                </li>
-            </ul>
-           
-            <div class="nav-cta">
-                <a href="./contact.html" class="btn btn-primary">Book a Session</a>
-            </div>
-            
-            <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-   
-    <main id="main-content">
-    
-        <section class="hero" id="hero" role="region" aria-label="Hero section">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">Trust Your Body.<br>Trust Your Breath.<br>Trust the Process.</h1>
-                    <p class="hero-subtitle">A space for movement, mindfulness and transformation — where physical practice meets inner wellbeing.</p>
-                    <div class="hero-buttons">
-                        <a href="#practices" class="btn btn-primary">Explore Our Practices</a>
-                        <a href="./contact.html" class="btn btn-secondary">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="hero-background">
-                <img src="./assets/images/hero-wellness.jpg" alt="Serene yoga and wellness practice environment" class="hero-image">
-                <div class="hero-overlay"></div>
-                <svg class="hero-shape hero-shape-1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
-                    <path d="M 50 10 Q 90 30 80 70 Q 60 90 20 80 Q 10 50 50 10" fill="rgba(230, 216, 200, 0.3)"/>
-                </svg>
-                <svg class="hero-shape hero-shape-2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
-                    <path d="M 20 40 Q 40 20 60 30 Q 80 40 75 65 Q 50 85 25 70 Q 10 60 20 40" fill="rgba(95, 118, 84, 0.2)"/>
-                </svg>
-            </div>
-            
-            <div class="scroll-indicator" aria-hidden="true">
-                <span></span>
-            </div>
-        </section>
-      
-        <section class="welcome" id="welcome" role="region" aria-label="Welcome section">
-            <div class="container">
-                <div class="welcome-content">
-                    <div class="welcome-text">
-                        <h2 class="section-title">More Than Movement</h2>
-                        <p class="welcome-intro">At Trust the Process, we believe that true wellness comes from developing a deeper relationship with your body and mind.</p>
-                        <p class="welcome-description">Every breath, every movement, every moment on the mat is an opportunity to reconnect with yourself. We combine physical strength with mindfulness, flexibility with self-awareness, and discipline with inner peace.</p>
-                        <div class="welcome-features">
-                            <div class="feature-item">
-                                <span class="feature-icon">🧘</span>
-                                <span class="feature-text">Movement</span>
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-icon">💨</span>
-                                <span class="feature-text">Breath</span>
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-icon">💪</span>
-                                <span class="feature-text">Strength</span>
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-icon">🌿</span>
-                                <span class="feature-text">Mindfulness</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="welcome-image">
-                        <img src="./assets/images/welcome-movement.jpg" alt="Person practicing mindful movement and breath work" class="responsive-image">
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="practices" id="practices" role="region" aria-label="Our practices and services">
-            <div class="container">
-                <h2 class="section-title">Our Practices</h2>
-                <p class="section-subtitle">Choose the practice that resonates with your journey</p>
-                
-                <div class="practices-grid">
-                    <!-- Yoga Card -->
-                    <div class="practice-card" tabindex="0" role="article">
-                        <div class="card-image-wrapper">
-                            <img src="./assets/images/yoga.jpg" alt="Traditional yoga practice" class="card-image">
-                            <div class="card-icon">🧘‍♀️</div>
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Yoga</h3>
-                            <p class="card-description">A balanced practice combining movement, breath and mindfulness to improve strength, flexibility and body awareness.</p>
-                            <button class="btn btn-link" aria-label="Learn more about Yoga">Learn More →</button>
-                        </div>
-                    </div>
-        
-                    <div class="practice-card" tabindex="0" role="article">
-                        <div class="card-image-wrapper">
-                            <img src="./assets/images/hot-yoga.jpg" alt="Hot yoga practice in heated studio" class="card-image">
-                            <div class="card-icon">🔥</div>
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Hot Yoga</h3>
-                            <p class="card-description">A heat-based yoga practice designed to encourage deeper movement, focus, mobility and physical challenge.</p>
-                            <button class="btn btn-link" aria-label="Learn more about Hot Yoga">Learn More →</button>
-                        </div>
-                    </div>
-                    
-                    <div class="practice-card" tabindex="0" role="article">
-                        <div class="card-image-wrapper">
-                            <img src="./assets/images/pilates.jpg" alt="Hot pilates core strengthening workout" class="card-image">
-                            <div class="card-icon">💥</div>
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Hot Pilates</h3>
-                            <p class="card-description">A dynamic, controlled workout focused on core strength, stability, endurance and mindful movement.</p>
-                            <button class="btn btn-link" aria-label="Learn more about Hot Pilates">Learn More →</button>
-                        </div>
-                    </div>
-                    
-                    <div class="practice-card" tabindex="0" role="article">
-                        <div class="card-image-wrapper">
-                            <img src="./assets/images/yin-yoga.jpg" alt="Restorative yin yoga practice" class="card-image">
-                            <div class="card-icon">🕉️</div>
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Yin Yoga</h3>
-                            <p class="card-description">A slower, meditative practice focused on deep stretching, stillness, relaxation and inner awareness.</p>
-                            <button class="btn btn-link" aria-label="Learn more about Yin Yoga">Learn More →</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-      
-        <section class="philosophy" id="philosophy" role="region" aria-label="Trust the Process philosophy">
-            <div class="container">
-                <h2 class="section-title philosophy-title">Trust the Process</h2>
-                
-                <div class="philosophy-statements">
-                    <div class="statement" role="article">
-                        <p class="statement-text">Move with intention.</p>
-                    </div>
-                    <div class="statement-divider" aria-hidden="true">•</div>
-                    
-                    <div class="statement" role="article">
-                        <p class="statement-text">Breathe with awareness.</p>
-                    </div>
-                    <div class="statement-divider" aria-hidden="true">•</div>
-                    
-                    <div class="statement" role="article">
-                        <p class="statement-text">Build strength.</p>
-                    </div>
-                    <div class="statement-divider" aria-hidden="true">•</div>
-                    
-                    <div class="statement" role="article">
-                        <p class="statement-text">Create balance.</p>
-                    </div>
-                    <div class="statement-divider" aria-hidden="true">•</div>
-                    
-                    <div class="statement" role="article">
-                        <p class="statement-text">Be present.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="benefits" id="benefits" role="region" aria-label="Benefits of our practices">
-            <div class="container">
-                <h2 class="section-title">Move. Breathe. Restore.</h2>
-                <p class="section-subtitle">Experience the transformative benefits of consistent practice</p>
-                
-                <div class="benefits-grid">
-                    <div class="benefit-item" role="article">
-                        <div class="benefit-icon">💪</div>
-                        <h3 class="benefit-title">Strength</h3>
-                        <p class="benefit-description">Build physical and mental resilience through purposeful movement.</p>
-                    </div>
-                    
-                    <div class="benefit-item" role="article">
-                        <div class="benefit-icon">🤸</div>
-                        <h3 class="benefit-title">Flexibility</h3>
-                        <p class="benefit-description">Improve mobility and expand your range of motion with dedicated practice.</p>
-                    </div>
-                    
-                    <div class="benefit-item" role="article">
-                        <div class="benefit-icon">🧠</div>
-                        <h3 class="benefit-title">Mindfulness</h3>
-                        <p class="benefit-description">Cultivate presence, awareness and connection to the moment.</p>
-                    </div>
-                    
-                    <div class="benefit-item" role="article">
-                        <div class="benefit-icon">😌</div>
-                        <h3 class="benefit-title">Stress Relief</h3>
-                        <p class="benefit-description">Release tension and find calm through breath and movement.</p>
-                    </div>
-                    
-                    <div class="benefit-item" role="article">
-                        <div class="benefit-icon">⚖️</div>
-                        <h3 class="benefit-title">Balance</h3>
-                        <p class="benefit-description">Achieve equilibrium between strength and softness, effort and ease.</p>
-                    </div>
-                    
-                    <div class="benefit-item" role="article">
-                        <div class="benefit-icon">🌱</div>
-                        <h3 class="benefit-title">Growth</h3>
-                        <p class="benefit-description">Experience personal transformation through consistent practice and dedication.</p>
-                    </div>
-                    
-                    <div class="benefit-item" role="article">
-                        <div class="benefit-icon">👁️</div>
-                        <h3 class="benefit-title">Body Awareness</h3>
-                        <p class="benefit-description">Deepen your understanding of your body and how it moves through space.</p>
-                    </div>
-                    
-                    <div class="benefit-item" role="article">
-                        <div class="benefit-icon">✨</div>
-                        <h3 class="benefit-title">Inner Calm</h3>
-                        <p class="benefit-description">Discover peace and inner stillness within yourself.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-      
-        <section class="cta-section" id="cta-section" role="region" aria-label="Call to action">
-            <div class="cta-content">
-                <h2 class="cta-title">Your Process Starts Here.</h2>
-                <p class="cta-subtitle">Give yourself the space to move, breathe, grow and reconnect.</p>
-                <a href="./contact.html" class="btn btn-primary btn-large">Get in Touch</a>
-            </div>
-        </section>
-    </main>
-    
-    <footer class="footer" role="contentinfo">
-        <div class="footer-container">
-            <div class="footer-grid">
-                <!-- Brand Section -->
-                <div class="footer-section footer-brand">
-                    <h3 class="footer-logo">Trust the Process</h3>
-                    <p class="footer-tagline">Wellness in movement. Strength in stillness.</p>
-                    <div class="social-links">
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
-                            <span class="social-icon">📷</span>
-                        </a>
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
-                            <span class="social-icon">👥</span>
-                        </a>
-                        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok">
-                            <span class="social-icon">🎵</span>
-                        </a>
-                    </div>
-                </div>
-                
-            
-                <div class="footer-section">
-                    <h4 class="footer-heading">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./about.html">About Us</a></li>
-                        <li><a href="#practices">Services</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-               
-                <div class="footer-section">
-                    <h4 class="footer-heading">Our Practices</h4>
-                    <ul class="footer-links">
-                        <li><a href="#practices">Yoga</a></li>
-                        <li><a href="#practices">Hot Yoga</a></li>
-                        <li><a href="#practices">Hot Pilates</a></li>
-                        <li><a href="#practices">Yin Yoga</a></li>
-                    </ul>
-                </div>
-                
-                
-                <div class="footer-section">
-                    <h4 class="footer-heading">Get in Touch</h4>
-                    <ul class="footer-contact">
-                        <li><span class="contact-label">Email:</span> <a href="mailto:info@trusttheprocess.com">info@trusttheprocess.com</a></li>
-                        <li><span class="contact-label">Phone:</span> <a href="tel:+27123456789">+27 (0) 12 345 6789</a></li>
-                        <li><span class="contact-label">Hours:</span> <span>Mon-Fri: 6am - 8pm</span></li>
-                        <li><span>Sat-Sun: 8am - 6pm</span></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p class="copyright">&copy; 2026 Trust the Process. All Rights Reserved.</p>
-                <div class="footer-meta">
-                    <a href="#" class="footer-link">Privacy Policy</a>
-                    <span class="divider">•</span>
-                    <a href="#" class="footer-link">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-   
-    <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
-        ↑
-    </button>
-    
-    <script src="./js/script.js" defer></script>
+
+<header class="site-header">
+<div class="container nav-wrap">
+<a href="index.html" class="logo"><span class="logo-mark" aria-hidden="true"></span>Rooted Movement</a>
+<nav class="nav-links" aria-label="Primary navigation">
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="services.html">Services</a>
+<a href="yoga.html">Yoga</a>
+<a href="pilates.html">Pilates</a>
+<a href="mobility.html">Mobility &amp; Strength</a>
+<a href="wellness.html">Spiritual Wellness</a>
+<a href="classes.html">Classes</a>
+<a href="contact.html">Contact Us</a>
+</nav>
+<div class="nav-cta">
+<a href="classes.html" class="btn btn--primary">Book a Class</a>
+<button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+</div>
+</header>
+<nav class="mobile-nav" aria-label="Mobile navigation">
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="services.html">Services</a>
+<a href="yoga.html">Yoga</a>
+<a href="pilates.html">Pilates</a>
+<a href="mobility.html">Mobility &amp; Strength</a>
+<a href="wellness.html">Spiritual Wellness</a>
+<a href="classes.html">Classes</a>
+<a href="contact.html">Contact Us</a>
+<a href="classes.html" class="btn btn--terracotta">Book a Class</a>
+</nav>
+<div class="overlay" aria-hidden="true"></div>
+
+<section class="hero">
+<div class="hero__media" aria-hidden="true">
+<img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=2000&q=80" alt="Woman practising yoga on a wooden floor in soft natural light" />
+</div>
+<span class="blob blob--1" aria-hidden="true"></span>
+<span class="blob blob--2" aria-hidden="true"></span>
+<span class="blob blob--3" aria-hidden="true"></span>
+<div class="container hero__content">
+<span class="eyebrow" style="color:#D4A74A;">A Movement &amp; Wellness Studio</span>
+<h1>Move. Strengthen.<br />Breathe. <em>Transform.</em></h1>
+<p>Discover a holistic approach to movement and wellbeing through yoga, Pilates, mobility training, strength, flexibility and spiritual wellness.</p>
+<div class="hero__actions">
+<a href="services.html" class="btn btn--terracotta">Explore Our Services <span class="arrow">→</span></a>
+<a href="classes.html" class="btn btn--ghost-light">View Classes <span class="arrow">→</span></a>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container split reveal">
+<div class="split__media"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&q=80" alt="Calm studio interior with plants and natural light" /></div>
+<div class="split__content">
+<span class="eyebrow">Welcome to Rooted Movement</span>
+<h2>A studio built around how you actually move.</h2>
+<p>Rooted Movement is a premium wellness studio where physical practice meets inner stillness. We combine the discipline of Pilates, the depth of yoga, the science of mobility and the calm of meditation into a single, coherent practice.</p>
+<p>Whether you are rebuilding strength after injury, deepening a yoga practice, or simply seeking more space to breathe, our teachers meet you where you are — and guide you forward with patience and precision.</p>
+<a href="about.html" class="btn btn--ghost">Our Story <span class="arrow">→</span></a>
+</div>
+</div>
+</section>
+
+<section class="section section--sand">
+<div class="container">
+<div class="text-center mb-lg reveal" style="max-width:720px;margin-inline:auto;">
+<span class="eyebrow">Our Approach</span>
+<h2>Movement as a practice, not a performance.</h2>
+<p class="lead" style="margin-inline:auto;">We believe lasting wellbeing emerges from four integrated pillars — strength, mobility, breath and awareness. Every class we teach draws from all four.</p>
+</div>
+<div class="grid grid--4">
+<div class="value-item reveal"><span class="value-item__num">01</span><div><h4>Strength</h4><p>Functional, controlled strength — built from the inside out through core work and bodyweight training.</p></div></div>
+<div class="value-item reveal reveal--delay-1"><span class="value-item__num">02</span><div><h4>Mobility</h4><p>Joint health, range of motion and movement quality that carry into everyday life.</p></div></div>
+<div class="value-item reveal reveal--delay-2"><span class="value-item__num">03</span><div><h4>Breath</h4><p>Conscious breathing that steadies the nervous system and deepens every posture.</p></div></div>
+<div class="value-item reveal reveal--delay-3"><span class="value-item__num">04</span><div><h4>Awareness</h4><p>Mindfulness and self-observation that turn movement into a meditative practice.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container split split--reverse reveal">
+<div class="split__media"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80" alt="Yoga practitioner in a peaceful forward fold on a mat" /></div>
+<div class="split__content">
+<span class="eyebrow">Yoga</span>
+<h2>Flexibility, balance, and space to breathe.</h2>
+<p>From the grounded structure of Hatha to the fluid rhythm of Vinyasa, our yoga classes build flexibility, balance and body awareness — while creating genuine mental quiet.</p>
+<ul style="margin:0 0 1.8rem;color:var(--muted);">
+<li>• Hatha, Vinyasa, Yin &amp; Restorative</li>
+<li>• Beginner-friendly foundations</li>
+<li>• Breath awareness woven into every class</li>
+</ul>
+<a href="yoga.html" class="btn btn--primary">Explore Yoga <span class="arrow">→</span></a>
+</div>
+</div>
+</section>
+
+<section class="section section--beige">
+<div class="container split reveal">
+<div class="split__media"><img src="https://images.unsplash.com/photo-1591258370814-01609b341790?w=1200&q=80" alt="Pilates reformer studio with light wood floors" /></div>
+<div class="split__content">
+<span class="eyebrow">Pilates</span>
+<h2>Core strength with intention and control.</h2>
+<p>Pilates at Rooted Movement is precise, breath-led and quietly demanding. We focus on alignment, stability and functional strength that shows up in real life — not just on the mat.</p>
+<ul style="margin:0 0 1.8rem;color:var(--muted);">
+<li>• Mat &amp; reformer-style sequencing</li>
+<li>• Posture, core and stability focus</li>
+<li>• Small-group and private sessions</li>
+</ul>
+<a href="pilates.html" class="btn btn--primary">Discover Pilates <span class="arrow">→</span></a>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container split split--reverse reveal">
+<div class="split__media"><img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=1200&q=80" alt="Person performing a mobility exercise on a mat" /></div>
+<div class="split__content">
+<span class="eyebrow">Mobility &amp; Strength</span>
+<h2>Move better. Get stronger. Stay resilient.</h2>
+<p>Mobility and strength are two sides of the same practice. We help you reclaim joint range, build functional strength and prevent injury through intelligent, progressive training.</p>
+<ul style="margin:0 0 1.8rem;color:var(--muted);">
+<li>• Hip, shoulder &amp; spine mobility</li>
+<li>• Bodyweight strength &amp; stability</li>
+<li>• Flexibility vs. mobility — done right</li>
+</ul>
+<a href="mobility.html" class="btn btn--primary">Improve Your Mobility <span class="arrow">→</span></a>
+</div>
+</div>
+</section>
+
+<section class="section section--forest" style="position:relative;overflow:hidden;">
+<span class="blob blob--2" aria-hidden="true"></span>
+<span class="blob blob--3" aria-hidden="true"></span>
+<div class="container split reveal" style="position:relative;z-index:1;">
+<div class="split__media"><img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4a7?w=1200&q=80" alt="Person meditating peacefully by a window with soft light" /></div>
+<div class="split__content">
+<span class="eyebrow" style="color:#D4A74A;">Spiritual Wellness</span>
+<h2>Create space within.</h2>
+<p>Our spiritual wellness offerings — meditation, breathwork, mindfulness and guided relaxation — are the quiet heart of the studio. They are non-dogmatic, welcoming, and grounded in practice rather than belief.</p>
+<p>No experience needed. No philosophy required. Just an invitation to slow down and notice.</p>
+<a href="wellness.html" class="btn btn--ghost-light">Explore Spiritual Wellness <span class="arrow">→</span></a>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="text-center mb-lg reveal">
+<span class="eyebrow">Featured Classes</span>
+<h2>A practice for every body.</h2>
+</div>
+<div class="grid grid--3">
+<article class="card reveal">
+<div class="card__media"><img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=900&q=80" alt="Group morning yoga class" /></div>
+<div class="card__body">
+<h3>Morning Yoga</h3>
+<p>Wake the body gently. Flexibility, breath and mindful presence to begin the day clear.</p>
+<a href="classes.html" class="card__link">View Schedule <span class="arrow">→</span></a>
+</div>
+</article>
+<article class="card reveal reveal--delay-1">
+<div class="card__media"><img src="https://images.unsplash.com/photo-1591258370814-01609b341790?w=900&q=80" alt="Power Pilates class in progress" /></div>
+<div class="card__body">
+<h3>Power Pilates</h3>
+<p>Controlled, core-driven strength work for intermediate practitioners wanting more challenge.</p>
+<a href="classes.html" class="card__link">View Schedule <span class="arrow">→</span></a>
+</div>
+</article>
+<article class="card reveal reveal--delay-2">
+<div class="card__media"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=900&q=80" alt="Mobility flow class" /></div>
+<div class="card__body">
+<h3>Mobility Flow</h3>
+<p>Joint-by-joint mobility to unlock range of motion and prepare the body for strength work.</p>
+<a href="classes.html" class="card__link">View Schedule <span class="arrow">→</span></a>
+</div>
+</article>
+</div>
+<div class="text-center" style="margin-top:2.5rem;">
+<a href="classes.html" class="btn btn--primary">View All Classes <span class="arrow">→</span></a>
+</div>
+</div>
+</section>
+
+<section class="section section--beige">
+<div class="container split reveal">
+<div class="split__content">
+<span class="eyebrow">Why Rooted Movement</span>
+<h2>Careful teaching. Honest practice. Real results.</h2>
+<p>We are not a franchise, and we are not chasing trends. Every class is designed by teachers who train continuously and teach deliberately.</p>
+<div style="display:grid;gap:1.4rem;margin-top:2rem;">
+<div class="value-item"><span class="value-item__num">01</span><div><h4>Small, attentive classes</h4><p>Enough space for real guidance, not crowded rooms.</p></div></div>
+<div class="value-item"><span class="value-item__num">02</span><div><h4>Integrated practice</h4><p>Yoga, Pilates, mobility and meditation taught as one coherent philosophy.</p></div></div>
+<div class="value-item"><span class="value-item__num">03</span><div><h4>No dogma, no ego</h4><p>We meet you where you are — injury, beginner, or seasoned practitioner.</p></div></div>
+</div>
+</div>
+<div class="split__media split__media--wide"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80" alt="Teacher guiding a small group in a calm studio" /></div>
+</div>
+</section>
+
+<section class="section">
+<div class="container reveal">
+<div class="text-center mb-lg">
+<span class="eyebrow">Kind Words</span>
+<h2>What our community says.</h2>
+</div>
+<div class="carousel" data-carousel>
+<div class="carousel__track">
+<div class="slide">
+<blockquote>“I came for the yoga and stayed for the way it changed how I carry myself. Six months in and my back pain is gone, my sleep is deeper, and I actually look forward to Mondays.”</blockquote>
+<cite>— Amelia, member since 2023</cite>
+</div>
+<div class="slide">
+<blockquote>“The Pilates classes are the most careful, precise teaching I've experienced. Every cue has a reason. My posture has completely changed.”</blockquote>
+<cite>— Rohan, member since 2022</cite>
+</div>
+<div class="slide">
+<blockquote>“The mobility work gave me back my shoulders. Literally. I can reach overhead without pain for the first time in a decade.”</blockquote>
+<cite>— Priya, member since 2024</cite>
+</div>
+</div>
+<div class="carousel__nav" aria-label="Testimonial navigation"></div>
+</div>
+</div>
+</section>
+
+<section class="section section--sand">
+<div class="container">
+<div class="text-center mb-lg reveal">
+<span class="eyebrow">Questions</span>
+<h2>Before you come in.</h2>
+</div>
+<div class="faq reveal">
+<div class="faq__item">
+<button class="faq__q">I'm a complete beginner — where should I start?</button>
+<div class="faq__a"><p>Start with Morning Yoga or Mobility Flow. Both are designed to welcome new students and teach the foundations carefully. You do not need any prior experience.</p></div>
+</div>
+<div class="faq__item">
+<button class="faq__q">What should I bring to class?</button>
+<div class="faq__a"><p>Comfortable clothing, water, and a willingness to slow down. Mats and props are provided at the studio. Feel free to bring your own mat if you prefer.</p></div>
+</div>
+<div class="faq__item">
+<button class="faq__q">Do you offer private sessions?</button>
+<div class="faq__a"><p>Yes — one-to-one and small-group private sessions are available in yoga, Pilates and mobility. Please <a href="contact.html">contact us</a> to arrange one.</p></div>
+</div>
+<div class="faq__item">
+<button class="faq__q">Can I attend if I have an injury or condition?</button>
+<div class="faq__a"><p>In most cases, yes — with appropriate modifications. Please mention any injury or condition when booking so we can guide you safely. We are not a medical service and recommend consulting your healthcare provider where relevant.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container reveal">
+<div class="cta-banner">
+<span class="eyebrow" style="color:#D4A74A;">Begin Your Practice</span>
+<h2>Your first class is the hardest. And the best.</h2>
+<p>Join a studio that treats movement as a craft and wellbeing as a long-term practice. We will meet you exactly where you are.</p>
+<div>
+<a href="classes.html" class="btn btn--terracotta">View Classes <span class="arrow">→</span></a>
+<a href="contact.html" class="btn btn--ghost-light">Contact Us <span class="arrow">→</span></a>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a href="index.html" class="logo"><span class="logo-mark" aria-hidden="true"></span>Rooted Movement</a>
+<p>A premium yoga, Pilates, mobility and spiritual wellness studio. Movement as a practice — not a performance.</p>
+<div class="social-row"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="Facebook">FB</a><a href="#" aria-label="YouTube">YT</a></div>
+</div>
+<div><h4>Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="classes.html">Classes</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+<div><h4>Services</h4><ul class="footer-links"><li><a href="yoga.html">Yoga</a></li><li><a href="pilates.html">Pilates</a></li><li><a href="mobility.html">Mobility &amp; Strength</a></li><li><a href="wellness.html">Spiritual Wellness</a></li></ul></div>
+<div>
+<h4>Stay Connected</h4>
+<p style="color:rgba(250,246,239,0.7);">Subscribe for class updates and wellness notes.</p>
+<form class="newsletter" onsubmit="event.preventDefault(); this.reset(); alert('Thank you for subscribing.');">
+<input type="email" placeholder="Your email" required aria-label="Email address" /><button type="submit">Join</button>
+</form>
+<p style="margin-top:1.4rem;color:rgba(250,246,239,0.7);font-size:0.86rem;">hello@rootedmovement.studio<br />+00 000 000 0000</p>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span class="year"></span> Rooted Movement. All rights reserved.</span>
+<span>Movement · Balance · Breath · Stillness</span>
+</div>
+</div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">↑</button>
+
+<script>
+(function(){
+document.querySelectorAll('.year').forEach(function(el){el.textContent=new Date().getFullYear();});
+var header=document.querySelector('.site-header');
+if(header){var onScroll=function(){header.classList.toggle('scrolled',window.scrollY>20)};window.addEventListener('scroll',onScroll,{passive:true});onScroll();}
+var hamburger=document.querySelector('.hamburger');
+var mobileNav=document.querySelector('.mobile-nav');
+var overlay=document.querySelector('.overlay');
+function closeMenu(){if(hamburger)hamburger.classList.remove('open');if(mobileNav)mobileNav.classList.remove('open');if(overlay)overlay.classList.remove('open');document.body.style.overflow='';}
+if(hamburger){hamburger.addEventListener('click',function(){var isOpen=mobileNav.classList.toggle('open');hamburger.classList.toggle('open',isOpen);if(overlay)overlay.classList.toggle('open',isOpen);document.body.style.overflow=isOpen?'hidden':'';});}
+if(overlay)overlay.addEventListener('click',closeMenu);
+if(mobileNav)mobileNav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu);});
+var revealObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target);}});},{threshold:0.12,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){revealObserver.observe(el);});
+document.querySelectorAll('.carousel').forEach(function(carousel){
+var track=carousel.querySelector('.carousel__track');
+var slides=carousel.querySelectorAll('.slide');
+var nav=carousel.querySelector('.carousel__nav');
+var index=0;
+if(!track||slides.length===0)return;
+slides.forEach(function(_,i){
+var dot=document.createElement('button');
+dot.setAttribute('aria-label','Go to testimonial '+(i+1));
+if(i===0)dot.classList.add('active');
+dot.addEventListener('click',function(){goTo(i)});
+if(nav)nav.appendChild(dot);
+});
+function goTo(i){index=(i+slides.length)%slides.length;track.style.transform='translateX(-'+(index*100)+'%)';if(nav)nav.querySelectorAll('button').forEach(function(b,bi){b.classList.toggle('active',bi===index)});}
+var autoplay=setInterval(function(){goTo(index+1)},7000);
+carousel.addEventListener('mouseenter',function(){clearInterval(autoplay)});
+carousel.addEventListener('mouseleave',function(){autoplay=setInterval(function(){goTo(index+1)},7000)});
+});
+document.querySelectorAll('.faq__item').forEach(function(item){
+var q=item.querySelector('.faq__q');if(!q)return;
+q.addEventListener('click',function(){var isOpen=item.classList.contains('open');var parent=item.closest('.faq');if(parent)parent.querySelectorAll('.faq__item').forEach(function(i){i.classList.remove('open')});if(!isOpen)item.classList.add('open');});
+});
+var backToTop=document.querySelector('.back-to-top');
+if(backToTop){window.addEventListener('scroll',function(){backToTop.classList.toggle('visible',window.scrollY>500)},{passive:true});backToTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});}
+var currentPath=window.location.pathname.split('/').pop()||'index.html';
+document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(function(a){var href=a.getAttribute('href');if(href===currentPath||(currentPath===''&&href==='index.html')){a.classList.add('active');}});
+var heroMedia=document.querySelector('.hero__media img');
+if(heroMedia&&window.matchMedia('(min-width:768px)').matches){
+window.addEventListener('scroll',function(){var offset=Math.min(window.scrollY*0.15,60);heroMedia.style.transform='translateY('+offset+'px) scale(1.05)';},{passive:true});
+}
+})();
+</script>
 </body>
 </html>
