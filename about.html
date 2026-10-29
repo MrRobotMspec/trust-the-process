@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About Us | Rooted Movement Wellness Studio</title>
+<meta name="description" content="Our philosophy, story and community. Rooted Movement is a premium yoga, Pilates, mobility and spiritual wellness studio built on mindful, integrated practice." />
+<meta property="og:title" content="About Rooted Movement | Wellness Studio" />
+<meta property="og:description" content="Movement as a practice, not a performance." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+<style>
+:root{--beige:#EFE6D8;--sand:#E3D4BC;--cream:#FAF6EF;--brown:#6B4F3A;--terracotta:#C1684A;--sage:#A8B39A;--olive:#7C8B6B;--mustard:#D4A74A;--forest:#2F3E2E;--forest-deep:#1F2A1E;--red-accent:#B14A38;--ink:#2A2622;--muted:#7A6F63;--font-head:"Montserrat",system-ui,sans-serif;--font-body:"Fraunces",Georgia,serif;--radius-sm:10px;--radius-md:20px;--radius-lg:40px;--radius-pill:999px;--shadow-sm:0 4px 14px rgba(47,62,46,.06);--shadow-md:0 12px 40px rgba(47,62,46,.10);--shadow-lg:0 24px 70px rgba(47,62,46,.14);--ease:cubic-bezier(0.22,1,0.36,1)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font-body);font-size:17px;line-height:1.7;color:var(--ink);background:var(--cream);overflow-x:hidden}
+img{max-width:100%;display:block;height:auto}
+a{color:var(--forest);text-decoration:none;transition:color .3s var(--ease)}
+a:hover{color:var(--terracotta)}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+ul{list-style:none;padding:0;margin:0}
+h1,h2,h3,h4,h5{font-family:var(--font-head);font-weight:600;letter-spacing:.01em;color:var(--forest);line-height:1.2;margin:0 0 1rem}
+h1{font-size:clamp(2.4rem,6vw,4.5rem);font-weight:700;letter-spacing:-.01em}
+h2{font-size:clamp(1.9rem,4vw,3rem)}
+h3{font-size:clamp(1.3rem,2.2vw,1.75rem)}
+h4{font-size:1.15rem;letter-spacing:.02em}
+p{margin:0 0 1rem;color:var(--ink)}
+.eyebrow{font-family:var(--font-head);font-size:.78rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--terracotta);display:inline-block;margin-bottom:1rem}
+.container{width:min(1200px,92%);margin-inline:auto}
+.section{padding:8rem 0}
+.section--tight{padding:5rem 0}
+.section--sand{background:var(--sand)}
+.section--beige{background:var(--beige)}
+.section--forest{background:var(--forest);color:var(--cream)}
+.section--forest h1,.section--forest h2,.section--forest h3{color:var(--cream)}
+.section--forest p{color:rgba(250,246,239,.82)}
+.text-center{text-align:center}
+.mb-lg{margin-bottom:3rem}
+.lead{font-size:1.15rem;color:var(--muted);max-width:62ch}
+.section--forest .lead{color:rgba(250,246,239,.75)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--font-head);font-size:.82rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:1rem 1.9rem;border-radius:var(--radius-pill);transition:transform .35s var(--ease),background .35s var(--ease),color .35s var(--ease),box-shadow .35s var(--ease);position:relative;overflow:hidden;cursor:pointer;white-space:nowrap}
+.btn--primary{background:var(--forest);color:var(--cream)}
+.btn--primary:hover{background:var(--forest-deep);color:var(--cream);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.btn--terracotta{background:var(--terracotta);color:var(--cream)}
+.btn--terracotta:hover{background:var(--red-accent);color:var(--cream);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.btn--ghost{background:transparent;color:var(--forest);border:1.5px solid var(--forest)}
+.btn--ghost:hover{background:var(--forest);color:var(--cream);transform:translateY(-3px)}
+.btn--ghost-light{background:transparent;color:var(--cream);border:1.5px solid rgba(250,246,239,.6)}
+.btn--ghost-light:hover{background:var(--cream);color:var(--forest);border-color:var(--cream);transform:translateY(-3px)}
+.btn .arrow{transition:transform .35s var(--ease)}
+.btn:hover .arrow{transform:translateX(5px)}
+.site-header{position:sticky;top:0;z-index:1000;background:rgba(250,246,239,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(47,62,46,.06);transition:padding .35s var(--ease),background .35s var(--ease)}
+.site-header.scrolled{background:rgba(250,246,239,.96);box-shadow:0 4px 24px rgba(47,62,46,.06)}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 0;gap:1.5rem}
+.logo{font-family:var(--font-head);font-weight:700;font-size:1.15rem;letter-spacing:.06em;color:var(--forest);display:flex;align-items:center;gap:.6rem;white-space:nowrap}
+.logo .logo-mark{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--mustard),var(--terracotta) 70%);display:inline-block}
+.nav-links{display:flex;gap:1.5rem;align-items:center;font-family:var(--font-head);font-size:.82rem;font-weight:500;letter-spacing:.04em}
+.nav-links a{color:var(--forest);position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--terracotta);transition:width .35s var(--ease)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--terracotta)}
+.nav-cta{display:flex;align-items:center;gap:.8rem}
+.hamburger{display:none;width:42px;height:42px;border-radius:50%;background:var(--forest);align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:20px;height:2px;background:var(--cream);border-radius:2px;transition:transform .3s var(--ease),opacity .3s var(--ease)}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{position:fixed;inset:0 0 0 auto;width:min(340px,88%);background:var(--cream);padding:6rem 2rem 2rem;transform:translateX(100%);transition:transform .45s var(--ease);z-index:999;overflow-y:auto;box-shadow:-10px 0 40px rgba(47,62,46,.18)}
+.mobile-nav.open{transform:translateX(0)}
+.mobile-nav a{display:block;font-family:var(--font-head);font-size:1rem;font-weight:500;padding:.9rem 0;border-bottom:1px solid rgba(47,62,46,.08);color:var(--forest)}
+.mobile-nav a.active{color:var(--terracotta)}
+.mobile-nav .btn{margin-top:1.5rem;width:100%;justify-content:center}
+.overlay{position:fixed;inset:0;background:rgba(31,42,30,.4);opacity:0;pointer-events:none;transition:opacity .35s var(--ease);z-index:998}
+.overlay.open{opacity:1;pointer-events:auto}
+.page-hero{position:relative;padding:clamp(5rem,10vw,8rem) 0 clamp(4rem,8vw,6rem);background:var(--forest);color:var(--cream);overflow:hidden;text-align:center}
+.page-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(212,167,74,0.18),transparent 60%),radial-gradient(circle at 80% 80%,rgba(193,104,74,0.20),transparent 60%);pointer-events:none}
+.page-hero__content{position:relative;z-index:2;max-width:780px;margin-inline:auto}
+.page-hero h1{color:var(--cream)}
+.page-hero p{color:rgba(250,246,239,.82);font-size:1.1rem;margin-top:1rem}
+.page-hero .eyebrow{color:var(--mustard)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.split--reverse .split__media{order:2}
+.split__media{position:relative;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow-lg)}
+.split__media img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.split__media:hover img{transform:scale(1.06)}
+.split__media--wide{aspect-ratio:5/4}
+.split__content h2{margin-bottom:1.2rem}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.value-card{padding:2rem 1.6rem;background:var(--cream);border-radius:var(--radius-md);border:1px solid rgba(47,62,46,.08);transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease)}
+.value-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:rgba(193,104,74,.35)}
+.value-card .icon-badge{background:var(--beige)}
+.icon-badge{width:60px;height:60px;border-radius:50%;background:var(--beige);display:inline-flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:1rem;color:var(--forest)}
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:"";position:absolute;left:.5rem;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--terracotta),var(--olive));border-radius:2px}
+.timeline__item{position:relative;padding:0 0 2.2rem 1.6rem}
+.timeline__item::before{content:"";position:absolute;left:-.05rem;top:.5rem;width:14px;height:14px;border-radius:50%;background:var(--cream);border:3px solid var(--terracotta);transform:translateX(-50%)}
+.timeline__item h4{margin-bottom:.4rem}
+.timeline__item span{font-family:var(--font-head);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--terracotta)}
+.timeline__item p{color:var(--muted);margin-top:.6rem}
+.philosophy{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,4rem);align-items:center}
+.philosophy__quote{font-family:var(--font-body);font-size:clamp(1.3rem,2.4vw,1.8rem);font-style:italic;line-height:1.5;color:var(--forest);position:relative;padding-left:1.8rem}
+.philosophy__quote::before{content:"“";position:absolute;left:-.2rem;top:-.8rem;font-size:4rem;color:var(--terracotta);font-family:var(--font-body);line-height:1}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.45;pointer-events:none;z-index:0}
+.blob--1{width:380px;height:380px;background:var(--terracotta);top:-120px;right:-80px;animation:float 14s ease-in-out infinite}
+.blob--2{width:320px;height:320px;background:var(--olive);bottom:-100px;left:-60px;animation:float 18s ease-in-out infinite reverse}
+.blob--3{width:260px;height:260px;background:var(--mustard);top:40%;right:15%;opacity:.28;animation:float 22s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(20px,-30px) scale(1.08)}}
+.cta-banner{position:relative;border-radius:var(--radius-lg);overflow:hidden;padding:clamp(3rem,7vw,6rem) clamp(1.5rem,5vw,5rem);background:linear-gradient(120deg,var(--forest) 0%,var(--olive) 100%);color:var(--cream);text-align:center}
+.cta-banner h2{color:var(--cream);margin-bottom:1rem}
+.cta-banner p{color:rgba(250,246,239,.85);max-width:60ch;margin:0 auto 2rem}
+.cta-banner .btn--ghost-light{margin-inline:.4rem}
+.site-footer{background:var(--forest-deep);color:rgba(250,246,239,.75);padding:5rem 0 2rem;font-size:.94rem}
+.site-footer h4{color:var(--cream);font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.2rem}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr;gap:2.5rem;margin-bottom:3rem}
+.footer-brand p{color:rgba(250,246,239,.7);margin:1rem 0 1.4rem;max-width:34ch}
+.footer-brand .logo{color:var(--cream)}
+.footer-links li{margin-bottom:.7rem}
+.footer-links a{color:rgba(250,246,239,.7)}
+.footer-links a:hover{color:var(--mustard)}
+.social-row{display:flex;gap:.7rem}
+.social-row a{width:38px;height:38px;border-radius:50%;background:rgba(250,246,239,.08);display:inline-flex;align-items:center;justify-content:center;color:var(--cream);transition:background .3s var(--ease),transform .3s var(--ease)}
+.social-row a:hover{background:var(--terracotta);transform:translateY(-3px);color:var(--cream)}
+.newsletter{display:flex;gap:.5rem;margin-top:1rem}
+.newsletter input{flex:1;padding:.85rem 1rem;border-radius:var(--radius-pill);border:1px solid rgba(250,246,239,.2);background:rgba(250,246,239,.06);color:var(--cream);font-family:var(--font-body);font-size:.9rem;outline:none;transition:border-color .3s var(--ease)}
+.newsletter input::placeholder{color:rgba(250,246,239,.45)}
+.newsletter input:focus{border-color:var(--mustard)}
+.newsletter button{background:var(--terracotta);color:var(--cream);border-radius:var(--radius-pill);padding:0 1.4rem;font-family:var(--font-head);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:background .3s var(--ease)}
+.newsletter button:hover{background:var(--mustard);color:var(--forest-deep)}
+.footer-bottom{border-top:1px solid rgba(250,246,239,.1);padding-top:1.8rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.82rem;color:rgba(250,246,239,.55)}
+.back-to-top{position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:50%;background:var(--forest);color:var(--cream);display:flex;align-items:center;justify-content:center;font-size:1.1rem;opacity:0;pointer-events:none;transform:translateY(20px);transition:opacity .35s var(--ease),transform .35s var(--ease),background .3s var(--ease);z-index:900;box-shadow:var(--shadow-md)}
+.back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:var(--terracotta);color:var(--cream)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal--delay-1{transition-delay:.12s}
+.reveal--delay-2{transition-delay:.24s}
+.reveal--delay-3{transition-delay:.36s}
+@media (max-width:1024px){.nav-links{display:none}.nav-cta .btn{display:none}.hamburger{display:flex}.footer-grid{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.split--reverse .split__media{order:0}.values-grid{grid-template-columns:repeat(2,1fr)}.philosophy{grid-template-columns:1fr}}
+@media (max-width:720px){.section{padding:4.5rem 0}.section--tight{padding:3rem 0}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;align-items:flex-start}.values-grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+<div class="container nav-wrap">
+<a href="index.html" class="logo"><span class="logo-mark" aria-hidden="true"></span>Rooted Movement</a>
+<nav class="nav-links" aria-label="Primary navigation">
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="services.html">Services</a>
+<a href="yoga.html">Yoga</a>
+<a href="pilates.html">Pilates</a>
+<a href="mobility.html">Mobility &amp; Strength</a>
+<a href="wellness.html">Spiritual Wellness</a>
+<a href="classes.html">Classes</a>
+<a href="contact.html">Contact Us</a>
+</nav>
+<div class="nav-cta">
+<a href="classes.html" class="btn btn--primary">Book a Class</a>
+<button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+</div>
+</header>
+<nav class="mobile-nav" aria-label="Mobile navigation">
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="services.html">Services</a>
+<a href="yoga.html">Yoga</a>
+<a href="pilates.html">Pilates</a>
+<a href="mobility.html">Mobility &amp; Strength</a>
+<a href="wellness.html">Spiritual Wellness</a>
+<a href="classes.html">Classes</a>
+<a href="contact.html">Contact Us</a>
+<a href="classes.html" class="btn btn--terracotta">Book a Class</a>
+</nav>
+<div class="overlay" aria-hidden="true"></div>
+
+<section class="page-hero">
+<div class="container page-hero__content">
+<span class="eyebrow">About Us</span>
+<h1>Mind, body, breath, movement — and spirit.</h1>
+<p>We believe wellness is not only about physical fitness. It is about awareness, balance, resilience and inner wellbeing — cultivated carefully, over time.</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container split reveal">
+<div class="split__content">
+<span class="eyebrow">Our Story</span>
+<h2>Built by practitioners, for practitioners.</h2>
+<p>Rooted Movement began as a small studio with one belief: that movement, taught carefully, can change how a person feels in their body and in their life. Not through intensity for its own sake — but through precision, patience and presence.</p>
+<p>What started as a handful of yoga and Pilates classes has grown into a complete practice — integrating mobility, strength, flexibility, breath and meditation under one roof. The studio is deliberately small. We want to know your name, your injuries, your goals and your quiet victories.</p>
+<div class="timeline" style="margin-top:2rem;">
+<div class="timeline__item"><span>Beginnings</span><h4>A single room, a single mat</h4><p>The first classes were taught to six students in a sunlit room with borrowed props.</p></div>
+<div class="timeline__item"><span>Growth</span><h4>Pilates and mobility added</h4><p>As students asked for more, we expanded — bringing in specialist teachers in core strength and joint mobility.</p></div>
+<div class="timeline__item"><span>Today</span><h4>A holistic studio</h4><p>Yoga, Pilates, mobility, strength, flexibility and spiritual wellness — taught as one integrated practice.</p></div>
+</div>
+</div>
+<div class="split__media split__media--wide"><img src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=1200&q=80" alt="Calm wooden studio with yoga mats and warm light" /></div>
+</div>
+</section>
+
+<section class="section section--sand">
+<div class="container">
+<div class="text-center mb-lg reveal" style="max-width:720px;margin-inline:auto;">
+<span class="eyebrow">Our Philosophy</span>
+<h2>Five threads, one practice.</h2>
+<p class="lead" style="margin-inline:auto;">We approach every class through the same lens — that mind, body, breath, movement and spirit are not separate. They inform each other constantly.</p>
+</div>
+<div class="values-grid">
+<div class="value-card reveal"><div class="icon-badge">◐</div><h3>Mind</h3><p>Attention, curiosity and non-judgement. We teach you to notice sensation before chasing a shape.</p></div>
+<div class="value-card reveal reveal--delay-1"><div class="icon-badge">◍</div><h3>Body</h3><p>Strength, mobility and alignment. The physical practice is honest, progressive and built to last.</p></div>
+<div class="value-card reveal reveal--delay-2"><div class="icon-badge">◌</div><h3>Breath</h3><p>Breath is the bridge. It steadies the nervous system and deepens every posture and movement.</p></div>
+<div class="value-card reveal"><div class="icon-badge">✦</div><h3>Movement</h3><p>Quality over quantity. Functional, controlled movement that carries into everyday life.</p></div>
+<div class="value-card reveal reveal--delay-1"><div class="icon-badge">❋</div><h3>Spirit</h3><p>Stillness, reflection and space. Not belief — practice. A quiet centre you return to.</p></div>
+<div class="value-card reveal reveal--delay-2"><div class="icon-badge">◈</div><h3>Community</h3><p>A small studio where people know each other, encourage each other and grow together.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container philosophy reveal">
+<div>
+<span class="eyebrow">Our Approach</span>
+<h2>Careful teaching. No shortcuts.</h2>
+<p>Every class is designed with intention. We do not chase trends, and we do not substitute intensity for skill. Instead, we build practice gradually — beginning with breath, layering in mobility, and only then loading strength.</p>
+<p>Teachers at Rooted Movement train continuously in anatomy, cueing, and modification. They adjust. They observe. They meet you where you are — whether that is your first class or your thousandth.</p>
+</div>
+<div class="philosophy__quote">Wellness is not a state you achieve. It is a relationship you build — with your body, your breath, and your attention.</div>
+</div>
+</section>
+
+<section class="section section--beige">
+<div class="container">
+<div class="text-center mb-lg reveal">
+<span class="eyebrow">Our Values</span>
+<h2>What we stand for.</h2>
+</div>
+<div class="values-grid">
+<div class="value-card reveal"><div class="icon-badge">01</div><h3>Precision over intensity</h3><p>We would rather you do five movements beautifully than fifty carelessly.</p></div>
+<div class="value-card reveal reveal--delay-1"><div class="icon-badge">02</div><h3>Inclusion without compromise</h3><p>Every body is welcome — and every body gets the same careful attention.</p></div>
+<div class="value-card reveal reveal--delay-2"><div class="icon-badge">03</div><h3>Long-term thinking</h3><p>We build practices that will still serve you in ten years, not just tomorrow.</p></div>
+<div class="value-card reveal"><div class="icon-badge">04</div><h3>Honest teaching</h3><p>No unsupported claims. No medical promises. Just skilled, transparent guidance.</p></div>
+<div class="value-card reveal reveal--delay-1"><div class="icon-badge">05</div><h3>Quiet confidence</h3><p>We do not need to shout. The practice speaks for itself.</p></div>
+<div class="value-card reveal reveal--delay-2"><div class="icon-badge">06</div><h3>Continuity</h3><p>We encourage regular, steady practice — not sporadic intensity.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section section--forest" style="position:relative;overflow:hidden;">
+<span class="blob blob--1" aria-hidden="true"></span>
+<span class="blob blob--3" aria-hidden="true"></span>
+<div class="container split reveal" style="position:relative;z-index:1;">
+<div class="split__media"><img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=1200&q=80" alt="Small group of students talking after class" /></div>
+<div class="split__content">
+<span class="eyebrow" style="color:#D4A74A;">Our Community</span>
+<h2>A studio that knows your name.</h2>
+<p>Rooted Movement is intentionally small. We cap class sizes so teachers can actually teach, and students can actually be seen. Over time, a community forms — one that shows up for each other, on good days and difficult ones.</p>
+<p>Whether you come for the movement, the stillness, or simply the hour of quiet in your week — you will find a place here.</p>
+<a href="classes.html" class="btn btn--ghost-light">Join a Class <span class="arrow">→</span></a>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container reveal">
+<div class="cta-banner">
+<span class="eyebrow" style="color:#D4A74A;">Come Visit</span>
+<h2>Experience the studio for yourself.</h2>
+<p>The best way to understand our approach is to step onto the mat. Your first class is a good place to begin.</p>
+<div>
+<a href="classes.html" class="btn btn--terracotta">View Classes <span class="arrow">→</span></a>
+<a href="contact.html" class="btn btn--ghost-light">Contact Us <span class="arrow">→</span></a>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a href="index.html" class="logo"><span class="logo-mark" aria-hidden="true"></span>Rooted Movement</a>
+<p>A premium yoga, Pilates, mobility and spiritual wellness studio. Movement as a practice — not a performance.</p>
+<div class="social-row"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="Facebook">FB</a><a href="#" aria-label="YouTube">YT</a></div>
+</div>
+<div><h4>Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="classes.html">Classes</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+<div><h4>Services</h4><ul class="footer-links"><li><a href="yoga.html">Yoga</a></li><li><a href="pilates.html">Pilates</a></li><li><a href="mobility.html">Mobility &amp; Strength</a></li><li><a href="wellness.html">Spiritual Wellness</a></li></ul></div>
+<div>
+<h4>Stay Connected</h4>
+<p style="color:rgba(250,246,239,0.7);">Subscribe for class updates and wellness notes.</p>
+<form class="newsletter" onsubmit="event.preventDefault(); this.reset(); alert('Thank you for subscribing.');">
+<input type="email" placeholder="Your email" required aria-label="Email address" /><button type="submit">Join</button>
+</form>
+<p style="margin-top:1.4rem;color:rgba(250,246,239,0.7);font-size:0.86rem;">hello@rootedmovement.studio<br />+00 000 000 0000</p>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span class="year"></span> Rooted Movement. All rights reserved.</span>
+<span>Movement · Balance · Breath · Stillness</span>
+</div>
+</div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">↑</button>
+
+<script>
+(function(){
+document.querySelectorAll('.year').forEach(function(el){el.textContent=new Date().getFullYear();});
+var header=document.querySelector('.site-header');
+if(header){var onScroll=function(){header.classList.toggle('scrolled',window.scrollY>20)};window.addEventListener('scroll',onScroll,{passive:true});onScroll();}
+var hamburger=document.querySelector('.hamburger');
+var mobileNav=document.querySelector('.mobile-nav');
+var overlay=document.querySelector('.overlay');
+function closeMenu(){if(hamburger)hamburger.classList.remove('open');if(mobileNav)mobileNav.classList.remove('open');if(overlay)overlay.classList.remove('open');document.body.style.overflow='';}
+if(hamburger){hamburger.addEventListener('click',function(){var isOpen=mobileNav.classList.toggle('open');hamburger.classList.toggle('open',isOpen);if(overlay)overlay.classList.toggle('open',isOpen);document.body.style.overflow=isOpen?'hidden':'';});}
+if(overlay)overlay.addEventListener('click',closeMenu);
+if(mobileNav)mobileNav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu);});
+var revealObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target);}});},{threshold:0.12,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){revealObserver.observe(el);});
+var backToTop=document.querySelector('.back-to-top');
+if(backToTop){window.addEventListener('scroll',function(){backToTop.classList.toggle('visible',window.scrollY>500)},{passive:true});backToTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});}
+var currentPath=window.location.pathname.split('/').pop()||'index.html';
+document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(function(a){var href=a.getAttribute('href');if(href===currentPath||(currentPath===''&&href==='index.html')){a.classList.add('active');}});
+})();
+</script>
+</body>
+</html>
